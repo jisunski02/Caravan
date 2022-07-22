@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".review"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/appbar_productviewing"
+        layout="@layout/application_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/title_bg"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Review"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P A G E"
+            android:textSize="33sp"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:paddingVertical="5dp"
+        android:background="@drawable/inactive_border">
+
+        <TextView
+            android:id="@+id/id_Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:textColor="@color/black"
+            android:text="Location"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:id="@+id/id_DateAndTime"
+            android:text="Date and Time"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="1dp"/>
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_w">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="10dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. TOTAL PAYMENT"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/id_package"
+            android:text="Package"
+            android:textSize="13sp"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="3dp"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Php "
+                android:paddingHorizontal="1dp"
+                android:textSize="13sp"
+                android:fontFamily="@font/poppins"
+                />
+
+            <TextView
+                android:id="@+id/id_price"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:textSize="13sp"
+                android:fontFamily="@font/poppins"
+                android:text="Price" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="1dp"
+        android:layout_marginLeft="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. DRIVER DETAILS"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Name: "
+             android:layout_marginLeft="20dp"
+             android:textSize="13sp"
+             android:fontFamily="@font/poppins"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Driver's Name"
+            android:id="@+id/id_driversName"
+            android:textSize="13sp"
+            android:fontFamily="@font/poppins"
+            android:paddingVertical="3dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address: "
+                android:layout_marginLeft="20dp"
+                android:textSize="13sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Drivers Address"
+            android:id="@+id/id_driversAddress"
+            android:textSize="13sp"
+            android:fontFamily="@font/poppins"
+            android:paddingVertical="3dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Number: "
+            android:textSize="13sp"
+            android:layout_marginLeft="20dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Drivers Mobile"
+            android:id="@+id/id_driversMobile"
+            android:textSize="13sp"
+            android:paddingVertical="3dp"
+            android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="3. VEHICLE's DETAILS"
+              android:fontFamily="@font/poppins"
+              android:textSize="14sp"
+              android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vehicle's Name: "
+                    android:textSize="13sp"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginLeft="20dp"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vehicle's Name"
+                    android:id="@+id/id_vehiclesName"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/poppins"
+                    android:paddingVertical="3dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plate No.: "
+            android:textSize="13sp"
+                android:fontFamily="@font/poppins"
+            android:paddingLeft="20dp"
+            android:paddingVertical="3dp"
+            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_vehiclesPlatenum"
+                android:text=" Plate #"
+                android:textSize="13sp"
+                android:fontFamily="@font/poppins"
+                />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vehicle's Capacity: "
+                    android:textSize="13sp"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vehicle's Capacity"
+                    android:id="@+id/id_vehiclesCapacity"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/poppins"
+                    android:paddingVertical="3dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transmission: "
+                    android:textSize="13sp"
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Transmission"
+                    android:id="@+id/id_vehiclesTransmission"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/poppins"
+                    android:paddingVertical="3dp"
+                    android:layout_marginBottom="14dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+    <Button
+        android:id="@+id/BTNconfirmReservation"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_white"
+        android:fontFamily="@font/poppins"
+        android:text="SUBMIT"
+        android:textColor="@color/background"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+       />
+</LinearLayout>
+
+</LinearLayout>
+</LinearLayout>

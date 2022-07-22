@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_account"
+            android:title="Profile" />
+
+      <item
+            android:id="@+id/rents"
+            android:icon="@drawable/ic_car_rental"
+            android:title="Transactions" />
+
+        <!--
+               <item
+                   android:id="@+id/rents"
+                   android:icon="@drawable/ic_baseline_playlist_add_check_24"
+                   android:title="Rents" />
+               <item
+                   android:id="@+id/history"
+                   android:icon="@drawable/ic_history_24"
+                   android:title="History" />   -->
+
+        <item
+            android:id="@+id/repairandservices"
+            android:icon="@drawable/ic_car_repair"
+            android:title="Repair and Services" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/ic_share"
+                    android:title="Share" />
+
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="Logout" />
+            </group>
+        </menu>
+    </item>
+</menu>

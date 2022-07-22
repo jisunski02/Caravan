@@ -1,0 +1,117 @@
+<resources>
+    <string name="app_name">Caravan</string>
+    <string name="open">Open navigation drawer</string>
+    <string name="close">Close navigation drawer</string>
+    <string name="invalid_name">Please Enter Valid Name</string>
+    <string name="invalid_lastname">Please Enter Valid Last Name</string>
+    <string name="invalid_firstname">Please Enter Valid First Name</string>
+    <string name="invalid_email">Enter Valid Email</string>
+    <string name="invalid_password">Enter six digits password</string>
+    <string name="invalid_confirmpassword">Password does not match</string>
+
+    //DropDown
+    <!--<string-array name="LocationDropDown">
+        <item>Agno</item>
+        <item>Urda</item>
+        <item>Villa</item>
+    </string-array>-->
+
+
+    //Headings
+    <string name="heading_one">First</string>
+    <string name="heading_two">Second</string>
+    <string name="heading_three">Three</string>
+
+    //DSPLAY DRIVERS
+    <string-array name="programming_language">
+        <item>C++</item>
+        <item>C#</item>
+        <item>Java</item>
+        <item>Javascript</item>
+        <item>Kotlin</item>
+        <item>Python</item>
+        <item>Ruby</item>
+        <item>Swift</item>
+        <item>Typescript</item>
+        <item>Visual Studio</item>
+        <item>C++2</item>
+        <item>C#2</item>
+        <item>Java2</item>
+        <item>Javascript2</item>
+        <item>Kotlin2</item>
+        <item>Python2</item>
+        <item>Ruby2</item>
+        <item>Swift2</item>
+        <item>Typescript2</item>
+        <item>Visual Studio2</item>
+    </string-array>
+    <string-array name="description">
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+        <item>Lorem ipsum</item>
+    </string-array>
+
+
+    //Description
+    <string name="desc_one">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</string>
+    <string name="desc_two">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</string>
+    <string name="desc_three">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="complete_package">Complete package will include all the expenses during the ride, including the tollfee, gas,\ndriver and car rent and parking fee.</string>
+    <string name="regular_package">Regular package will only include car rent. The\ncustomer will shoulder the other expenses,\nlike parking fee, tollfee etc. It is also a\nfull to full fuel policy.</string>
+    <string name="cashonpickup">Payment will be made upon COP,\ninstead of paying it through g-cash.\nWith this, the renter is assured that\nhe’ll get the rented car are in good condition.</string>
+
+    <string name="privacy_policy">At Caravan Rentals, we respect your privacy. We implemented this privacy policy ("Privacy Policy") to explain to you how we use and protect the personal information we may gather from and about our customers by means of our websites, mobile applications, online booking widgets. By using our mobile applications, you consent to the collection, use and disclosure of your information, as described in this Privacy Policy. \n
+            You may provide us with certain information in connection with a transaction or in your interactions with our CARAVAN RENTAL APP. When you are asked to provide personal information, you may decline. If you choose not to provide the information, you may not be able to use some products or services. The personal information that we may collect includes: \n
+            Your full name, email address, and your payment information. We might also ask for your home address, phone number, date and place of birth, passport and driving license information, and the names of any additional drivers.
+In addition to this, we also collect information from the computer, phone, tablet or other device you use to access our services. This includes the IP address, the browser you\’re using and your language settings. There are also situations in which we receive information about you from others or when we automatically collect other information.
+\n
+        <b>Why We Collect Your Data\n</b>
+
+        We are collecting your data for several reasons:
+
+        •To better understand your needs. \n
+        •To improve our services and products.\n
+        •To contact you so you know if the car you rented is good. \n
+
+       <b>Safeguarding and Securing the Data \n</b>
+
+        CARAVAN is committed to securing your data and keeping it confidential. CARAVAN has done all in its power to prevent data theft, unauthorized access, and disclosure by implementing the latest technologies and software, which help us safeguard all the information we collect online. \n
+
+        Additional contact information about you that we may obtain through third parties with whom we do business (SinoTrack—GPS Tracking System).
+    With your consent we may access location-based information from your mobile device or based on your IP address. We may also use your mobile device location information to provide you with notifications with your consent. We do not use this information to specifically locate you for any reason other than to provide you the service. If you have allowed us to utilise your location information in the past and wish to revoke the permissions, please turn off location services at the device level. With your consent, our application may utilise your device\’s camera feature to upload photos (such as your receipts) to the application. If you have allowed the application to utilise your camera and wish to revoke the permissions to do so, please do so at the device level. \n
+
+        	If you need to get in touch with our customer service team, or reach out to us in a different way (such as social media) we\’ll collect information from you there, too. This applies whether you are contacting us with feedback or asking for help using our services.
+
+    </string>
+
+    <string name="termsandconditions">
+        The Rental Agreement. These Rental Terms and Conditions, the rental document you receive when you are given access to the car you are renting (the "Rental Contract") any additional agreement signed by you, any documents or agreements (or links to on-line documents or agreements) sent to you electronically in connection with your rental, the Privacy Notice, and the return receipt or record (the "Rental Receipt") with computed rental charges together constitute the "Rental Agreement" between yourself and Caravan. \n
+            2. Your Rental. You rent from Caravan the car described on the Rental Contract, which rental is solely a transfer of possession, and not of ownership. You agree to the terms in the Rental Agreement provided any such term is not prohibited by the law of a jurisdiction covering this rental, in which case such law controls. “You” and “your” refer to the person who signs this agreement, “we”, “our” and “us” refer to Caravan. You also agree that you are not our agent for any purpose; and that you cannot assign delegate or transfer your obligations under the Rental Agreement and any discrete part thereof. \n
+            3. Changes. Any change in the Rental Agreement or our rights must be in writing and signed by an authorized Caravan officer. You further agree that we have the unilateral right to change these Terms and Conditions from time to time either upon written notice to you, in paper or electronic form, or upon our posting such changes on the Caravan web site.  Such changes will apply to rentals that you reserve after such notice has been given, as indicated by the date of such notice, if sent in written form, or the date such changes are posted on the Caravan web site, which date will be indicated therein, without any requirement by you to sign the changed Terms and Conditions.  Changes to these Terms and Conditions will be posted as they occur on the Caravan web site at www.Caravan.com and will govern all rentals commencing after posting even if the terms provided at time of reserving the rental car are different. \n
+            4. Meaning of Car. The word “car” in the Rental Agreement means the vehicle rented to you or its replacement and includes tires, tools, keys, key fobs, equipment, included and optional accessories, plates, documents, and any other products or property provided by Caravan with the vehicle and separately rented to you by Caravan unless otherwise explicitly specified in the Rental Agreement.
+            \n
+            5. Who May Drive The Car. You represent to Caravan that you are a capable and validly licensed driver and will remain a capable and validly licensed driver throughout the term of your rental. You agree that we have the right to verify that your license has been validly issued and is in good standing (not suspended, revoked or otherwise restricted in any way) as a condition precedent to each rental; and that we may in our sole discretion refuse to rent to you if your license is not in good standing. We reserve the right to deny rentals based upon (i) information about your license status, (ii) authenticity of your driver\'s license or other credentials, (iii) the inability to verify your identity or payment methods, (iv) your driving record provided by the Motor Vehicle Department of the jurisdiction that issued your license, or (v) any other information received from any other source in the business of validating an identity or the driver\'s license credential that we believe to be reliable. We reserve the right to validate your driving credentials and license good standing periodically without notice to you except as required by law. Except where otherwise specifically authorized by applicable law, only you, your spouse or domestic partner, or, if you rent from us under your employer\’s corporate account agreement, your employer or a regular fellow employee incidental to business duties may drive the car (each a "Permitted Driver"), but only with your prior permission. Any Permitted Driver must be at least 25 years old and must also be a capable and validly licensed driver at all times during which such person is operating the car.  Any person other than you or a Permitted Driver that operates the car must sign an additional driver form at the time of the rental. We may charge for each additional driver authorized to drive the car, which will be specified on the Rental Contract. You acknowledge that you will remain financially responsible under the Rental Agreement at all times even if the car is operated by a Permitted Driver or someone other than yourself.
+    </string>
+    <string name="title_activity_nearby_places_car_repair">NearbyPlacesCarRepair</string>
+    <string name="title_activity_maps_repair_shop">MapsRepairShop</string>
+</resources>

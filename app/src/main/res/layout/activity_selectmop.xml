@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".selectmop"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/appbar_productviewing"
+        layout="@layout/application_toolbar" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/radio_groupII"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/vehicle_border"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/cop"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:checked="true"
+                android:fontFamily="@font/poppins"
+                android:text=" Cash On Pickup"
+                android:textColor="@color/MainColor"
+                android:textSize="23sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cashonpickup"
+                android:textSize="13sp"
+                android:gravity="left"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="75dp"
+                android:fontFamily="@font/poppins" />
+
+            <RadioButton
+                android:id="@+id/gcash"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text=" GCash"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/MainColor"
+                android:textSize="23sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GCash is mobile money or “e-money” that\nallows you to pay online."
+                android:textSize="13sp"
+                android:gravity="left"
+                android:fontFamily="@font/poppins"
+                android:layout_marginEnd="80dp"
+                android:layout_marginStart="90dp"
+                android:layout_marginBottom="20dp"
+                />
+
+
+        </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+            <Button
+                android:id="@+id/Button_Next"
+                android:layout_width="130dp"
+                android:layout_height="35dp"
+                android:background="@drawable/blue_fill__rounded_color"
+                android:fontFamily="serif"
+                android:text="NEXT"
+                android:textColor="@color/background"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+
+</LinearLayout>
+</LinearLayout>

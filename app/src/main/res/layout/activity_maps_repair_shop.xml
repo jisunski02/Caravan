@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:http="http://schemas.android.com/apk/res/android"
+    http:layout_height="match_parent"
+    http:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    http:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MapsRepairShop">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        http:gravity="end"
+        http:layout_width="match_parent"
+        http:layout_height="wrap_content">
+
+        <TextView
+            http:text="Nearby Repair Shops"
+            http:layout_marginStart="20dp"
+            http:textSize="18sp"
+            http:textColor="#212121"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            http:fontFamily="@font/poppins_medium"
+            http:layout_width="wrap_content"
+            http:layout_height="wrap_content"/>
+
+        <ImageButton
+            http:id="@+id/showCarRepair"
+            http:layout_marginEnd="10dp"
+            http:layout_marginTop="10dp"
+            http:src="@drawable/ic_car_repair"
+            app:layout_constraintEnd_toEndOf="parent"
+            http:layout_width="wrap_content"
+            http:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<fragment
+    http:id="@+id/map"
+    http:name="com.google.android.gms.maps.SupportMapFragment"
+    http:layout_width="match_parent"
+    http:layout_height="match_parent"
+    />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

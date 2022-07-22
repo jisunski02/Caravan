@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ServiceUnit/AppData/Local/Android/Sdk/platforms/android-31/data/res/drawable/editbox_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/drawable/ic_pendingrent_cardbgcolor.xml" value="0.162" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/activity_home_not_logged_in.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/activity_maps_repair_shop.xml" value="0.176" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/activity_privacy_policy.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/activity_profile.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/activity_register.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/activity_repair__services.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/activity_terms_of_service.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/application_toolbar.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/contentmain.xml" value="0.2" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/contentusernotloggedin.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/dailog_cancelrent.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/dialog_paymentoption.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/dialog_paynow.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/dialog_searchable_spinner.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/dialog_view_car.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/dialog_view_carhome.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/homecarlayout.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/mainscreenv2.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/rents_layout.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/rents_layoutv2.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/rents_layoutv3.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/vehicle_photos_layout.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/layout/view_rent_layout.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable-v24/bg_button.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable-v24/bg_button_login.xml" value="0.169" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable-v24/bg_button_skip.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable-v24/bg_spinner.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable-v24/ic_baseline_sms_24.xml" value="0.195" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/background_layout.xml" value="0.169" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/bg_w.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/blue_border_rounded_cornwe.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/blue_fill__rounded_color.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/border_black.xml" value="0.195" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/bottomsheet_bg.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/buttongradient.xml" value="0.195" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/buttongradient2.xml" value="0.195" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/date_picker_bg.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_account_box.xml" value="0.1985" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_approverent_cardbgcolor.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_arrow_drop_down.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_available_cardbgcolor.xml" value="0.1985" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_back_arrow_activity.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.1985" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.195" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_cancel_cardbgcolor.xml" value="0.169" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_car_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_car_rental.xml" value="0.169" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_completedrent_cardbgcolor.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_date_range_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_estancia_cardbgcolor.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_path_separate.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_pending.xml" value="0.169" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_pendingrent_cardbgcolor.xml" value="0.25555555555555554" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_time.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_time_cute.xml" value="0.169" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/ic_trans_remote.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/inactive_border.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/layout_bg.xml" value="0.1655" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/round_bot.xml" value="0.1985" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/round_top.xml" value="0.1985" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/round_up.xml" value="0.1985" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/title_bg.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/drawable/vehicle_border.xml" value="0.2703125" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/font/aclonica.xml" value="0.284375" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_apprvd__rents.xml" value="0.264" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_car__bookings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_cmpltd__rents.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_home_not_logged_in.xml" value="0.15822368421052632" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_lastpage.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_mainscreen.xml" value="0.264" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_mylist.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_otp_smsverify.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_pndng__rents.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_review.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_reviewv2.xml" value="0.2" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_selectmop.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_selectpackage.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_selectvehicle.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/activity_trydriverlist.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/application_profile_toolbar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/application_toolbar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/application_toolbar_product_viewing.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/application_toolbar_rents.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/bg_button.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/c_rents_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/car_layout.xml" value="0.264" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/contentmain.xml" value="0.2" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/contentusernotloggedin.xml" value="0.176" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/dailog_cancelrent.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/dialog_accountverify.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/dialog_add_rent.xml" value="0.264" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/dialog_edit_profile.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/dialog_search_spinner.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/dialog_searchable_spinner.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/dialog_view_car.xml" value="0.2" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/drivers_layouthome.xml" value="0.16019736842105264" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/fragment_approve_rents.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/fragment_cancelled_rents.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/fragment_completed_rents.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/fragment_pending_rents.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/header.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/homecarlayout.xml" value="0.16019736842105264" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/mainscreenv2.xml" value="0.2" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/my_row.xml" value="0.2" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/rents_layout.xml" value="0.2" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/rents_layoutv2.xml" value="0.2" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/user_rents.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/userrentscontent.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/vehicles_list.xml" value="0.264" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/vehicles_list_layout.xml" value="0.264" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/view_rent_layout.xml" value="0.176" />
+        <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

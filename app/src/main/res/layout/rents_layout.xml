@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="6dp"
+        android:layout_marginBottom="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/body_update_profile_picture"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="100dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="5dp"
+                    app:cardMaxElevation="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageButton
+                            android:id="@+id/ButtonUpdateProfilePicture"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/ic_pendingrent_cardbgcolor"
+                            android:elevation="8dp"
+                            android:src="@drawable/ic_eye"
+                            app:iconPadding="0dp"
+                            app:iconTint="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <ImageView
+                    android:id="@+id/ivpickup"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/calendar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/pick_up_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="April 12, 2022"
+                    android:textSize="12.5sp"
+                    app:layout_constraintStart_toEndOf="@+id/ivpickup"
+                    app:layout_constraintTop_toTopOf="@+id/ivpickup"/>
+
+                <ImageView
+                    android:id="@+id/iv_return"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/calendar2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivpickup"
+                    />
+
+
+                <TextView
+                    android:id="@+id/return_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textSize="12.5sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="April 12, 2022"
+                    app:layout_constraintStart_toEndOf="@id/iv_return"
+                    app:layout_constraintTop_toTopOf="@id/iv_return" />
+
+                <ImageView
+                    android:id="@+id/ivrenpackage"
+                    android:layout_width="18dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/box"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_return"
+                    />
+
+
+                <TextView
+                    android:id="@+id/rent_package"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="12.5sp"
+                    android:layout_marginTop="2dp"
+                    android:text="Regular Package"
+                    app:layout_constraintStart_toEndOf="@+id/ivrenpackage"
+                    app:layout_constraintTop_toTopOf="@+id/ivrenpackage" />
+
+                <ImageView
+                    android:id="@+id/ivrentdays"
+                    android:layout_width="20dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/days"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivrenpackage"
+                    />
+
+
+                <TextView
+                    android:id="@+id/rent_days"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="12.5sp"
+                    android:text="3"
+                    app:layout_constraintStart_toEndOf="@+id/ivrentdays"
+                    app:layout_constraintTop_toTopOf="@+id/ivrentdays" />
+
+                <ImageView
+                    android:id="@+id/ivtotalprice"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/money"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivrentdays"
+                    />
+
+
+                <TextView
+                    android:id="@+id/total_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="7000"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#F44336"
+                    android:textSize="14.5sp"
+                    app:layout_constraintStart_toEndOf="@+id/ivtotalprice"
+                    app:layout_constraintTop_toTopOf="@+id/ivtotalprice" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
