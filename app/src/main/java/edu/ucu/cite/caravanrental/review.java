@@ -279,16 +279,16 @@ public class review extends AppCompatActivity implements View.OnClickListener{
                         try {
                             JSONObject jsonObject = new JSONObject(response);
 
-                            String result = jsonObject.getString("success");
+                            String result = jsonObject.getString("successs");
 
-                            if(result.equals("1")){
+                            if(result.equals("11")){
                                 Intent i = new Intent(review.this,lastpage.class);
                                 startActivity(i);
                                 finish();
                                 //Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
                                 Log.e("anyText",response);
                             }
-                            else{
+                           else{
                                 Toast.makeText(getApplicationContext(), jsonObject.getString("message")+"\n"+response.toString(), Toast.LENGTH_LONG).show();
                             }
 

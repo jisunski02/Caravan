@@ -5,6 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:cardBackgroundColor="#F44336"
+        app:cardCornerRadius="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/chatUs"
+                android:layout_margin="13dp"
+                android:src="@drawable/ic_baseline_chat_24"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

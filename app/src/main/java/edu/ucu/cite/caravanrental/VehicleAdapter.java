@@ -13,7 +13,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,6 +34,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.ucu.cite.caravanrental.Adapters.VehiclePhotoAdapter;
 import edu.ucu.cite.caravanrental.DataModels.VehiclePhotoModel;
 
 public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.VehicleViewHolder>{
@@ -43,9 +43,9 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.VehicleV
     private List<Vehicles> vehiclesList;
     private String url_image = "https://caravan-rental-cars.online/vehicles-photo/";
 
-    RecyclerView vehiclerecyclerView;
+    RecyclerView vehiclePhotoRecyclerview;
     private LinearLayoutManager linearLayoutManager;
-    private static final String URL_VEHICLES = "https://caravan-rental-cars.online/includes/displayvehicles.php";
+    private static final String URL_VEHICLES_PHOTO = "https://caravan-rental-cars.online/includes/displayvehiclePhoto.php";
 
     List<VehiclePhotoModel> vehiclesPhoto;
     String item_price = "";
@@ -149,11 +149,13 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.VehicleV
                     viewcarDetails.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                     viewcarDetails.setContentView(R.layout.dialog_view_car);
 
-                    vehiclerecyclerView = viewcarDetails.findViewById(R.id.recycler_view_vehicles);
-                    vehiclerecyclerView.setHasFixedSize(true);
+                    vehiclePhotoRecyclerview = viewcarDetails.findViewById(R.id.recycler_view_vehicles);
+                    vehiclePhotoRecyclerview.setHasFixedSize(true);
                     linearLayoutManager = new LinearLayoutManager(contextX, LinearLayoutManager.HORIZONTAL, false);
-                    vehiclerecyclerView.setLayoutManager(linearLayoutManager);
-                    vehiclesList = new ArrayList<>();
+                    vehiclePhotoRecyclerview.setLayoutManager(linearLayoutManager);
+                    vehiclesPhoto = new ArrayList<>();
+
+                    loadVehiclePhoto(vehicles.getVehicles_id());
 
                     ImageView carImage = viewcarDetails.findViewById(R.id.carImage);
                     TextView carName = viewcarDetails.findViewById(R.id.carName);
@@ -261,11 +263,9 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.VehicleV
         }
     }
 
-    private void loadVehiclesnotAvailable() {
+    private void loadVehiclePhoto(int vehicle_photo_id) {
 
-        vehiclesList.clear();
-        vehiclerecyclerView.setAdapter(null);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_VEHICLES,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_VEHICLES_PHOTO,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -280,45 +280,27 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.VehicleV
                                 //getting product object from json array
                                 JSONObject vehiclesJSONObject = vehicles.getJSONObject(i);
 
-                                int vehiclesId = vehiclesJSONObject.getInt("vehiclesId");
-                                String vehiclePhoto = vehiclesJSONObject.getString("vehiclesPhoto");
-                                String transmission = vehiclesJSONObject.getString("transmission");
-                                String yearModel = vehiclesJSONObject.getString("yearModel");
-                                String seatCapacity = vehiclesJSONObject.getString("seatCapacity");
-                                String manufacturedBy = vehiclesJSONObject.getString("manufacturedBy");
-                                String vehiclesName = vehiclesJSONObject.getString("vehiclesName");
-                                String vehiclesPlatenum = vehiclesJSONObject.getString("vehiclesPlatenum");
-                                String vehicleColor = vehiclesJSONObject.getString("vehicleColor");
-                                String regExpiry = vehiclesJSONObject.getString("registrationExpiry");
-                                String regular_package = vehiclesJSONObject.getString("regular_package");
-                                String complete_package = vehiclesJSONObject.getString("complete_package");
-                                String vehicleStatus = vehiclesJSONObject.getString("vehicleStatus");
+                                String id = vehiclesJSONObject.getString("id");
+                                int vehicle_id = vehiclesJSONObject.getInt("vehicle_id");
+                                String vehicle_name = vehiclesJSONObject.getString("vehicle_name");
+                                String created_at = vehiclesJSONObject.getString("created_at");
 
 
-                                Vehicles vehicle = new Vehicles(vehiclesId,
-                                        vehiclePhoto,
-                                        transmission,
-                                        vehiclesName,
-                                        yearModel,
-                                        seatCapacity,
-                                        manufacturedBy,
-                                        vehiclesPlatenum,
-                                        vehicleColor,
-                                        regExpiry,
-                                        regular_package,
-                                        complete_package,
-                                        vehicleStatus);
+                                VehiclePhotoModel vehicle = new VehiclePhotoModel(id,
+                                        vehicle_id,
+                                        vehicle_name,
+                                        created_at);
 
-                                if(vehicleStatus.equals("0")){
-                                    vehiclesList.add(vehicle);
+                                if(vehicle_photo_id == vehicle_id){
+                                    vehiclesPhoto.add(vehicle);
                                 }
 
 
                             }
 
                             //creating adapter object and setting it to recyclerview
-                            VehicleAdapterHome adapter = new VehicleAdapterHome(contextX, vehiclesList);
-                            vehiclerecyclerView.setAdapter(adapter);
+                            VehiclePhotoAdapter adapter = new VehiclePhotoAdapter(contextX, vehiclesPhoto);
+                            vehiclePhotoRecyclerview.setAdapter(adapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();

@@ -3,6 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Github/Caravan/app/src/main/res/layout/activity_chat_us_webview.xml" value="0.16052631578947368" />
+        <entry key="..\:/Github/Caravan/app/src/main/res/layout/activity_profile.xml" value="0.16052631578947368" />
+        <entry key="..\:/Github/Caravan/app/src/main/res/layout/activity_reviewv2.xml" value="0.16052631578947368" />
+        <entry key="..\:/Github/Caravan/app/src/main/res/layout/contentmain.xml" value="0.16052631578947368" />
+        <entry key="..\:/Github/Caravan/app/src/main/res/layout/dailog_cancelrent.xml" value="0.16052631578947368" />
+        <entry key="..\:/Github/Caravan/app/src/main/res/layout/dialog_accountverify.xml" value="0.16052631578947368" />
+        <entry key="..\:/Github/Caravan/app/src/main/res/layout/dialog_add_rent.xml" value="0.16052631578947368" />
+        <entry key="..\:/Github/Caravan/app/src/main/res/layout/dialog_view_car.xml" value="0.16052631578947368" />
+        <entry key="..\:/Github/Caravan/app/src/main/res/layout/fragment_approve_rents.xml" value="0.16052631578947368" />
+        <entry key="..\:/Github/Caravan/app/src/main/res/layout/mainscreenv2.xml" value="0.16052631578947368" />
+        <entry key="..\:/Github/Caravan/app/src/main/res/layout/rents_layoutv2.xml" value="0.16052631578947368" />
+        <entry key="..\:/Github/Caravan/app/src/main/res/layout/vehicle_photos_layout.xml" value="0.16052631578947368" />
         <entry key="..\:/Users/ServiceUnit/AppData/Local/Android/Sdk/platforms/android-31/data/res/drawable/editbox_background.xml" value="0.2703125" />
         <entry key="..\:/Users/ServiceUnit/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ServiceUnit/Desktop/To do Caravan/CaravanLast/app/src/main/res/drawable/ic_pendingrent_cardbgcolor.xml" value="0.162" />

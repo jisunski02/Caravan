@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -81,6 +82,8 @@ public class Mainscreen extends AppCompatActivity implements AdapterView.OnItemS
     ArrayList<String> arrayList = new ArrayList<>();
     Dialog dialog;
 
+    ImageView chatUs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +101,6 @@ public class Mainscreen extends AppCompatActivity implements AdapterView.OnItemS
 
         }
 
-
         //Initialize array list
         //Add value in array list
         arrayList.add("Agno"); arrayList.add("Aguilar"); arrayList.add("Alaminos"); arrayList.add("Alcala"); arrayList.add("Anda");
@@ -112,7 +114,14 @@ public class Mainscreen extends AppCompatActivity implements AdapterView.OnItemS
         arrayList.add("Sta. Maria"); arrayList.add("Sto. Tomas"); arrayList.add("Sual"); arrayList.add("Tayug"); arrayList.add("Umingan");
         arrayList.add("Urbiztondo"); arrayList.add("Urdaneta"); arrayList.add("Villasis");
 
-
+        chatUs = findViewById(R.id.chatUs);
+        chatUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Mainscreen.this, ChatUsWebviewActivity.class);
+                startActivity(intent);
+            }
+        });
 
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);

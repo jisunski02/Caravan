@@ -128,8 +128,8 @@ public class profile extends AppCompatActivity {
                 updateProfile.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(profile.this, "Under construction..to be followed", Toast.LENGTH_SHORT).show();
-                       //updateProfile();
+                        //Toast.makeText(profile.this, "Under construction..to be followed", Toast.LENGTH_SHORT).show();
+                       updateProfile();
                     }
                 });
 
@@ -303,7 +303,6 @@ public class profile extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
 
                 Map<String,String> params = new HashMap<>();
-                params.put("id", id);
                 params.put("firstname", fname);
                 params.put("lastname", lname);
                 params.put("user_address", useraddress);

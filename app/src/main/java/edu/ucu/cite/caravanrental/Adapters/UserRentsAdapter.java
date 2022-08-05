@@ -208,7 +208,7 @@ public class UserRentsAdapter extends RecyclerView.Adapter<UserRentsAdapter.View
                     @Override
                     public void onClick(View v) {
                         cancelRent();
-                        rentsDataModels.remove(holder.getAdapterPosition());
+                       rentsDataModels.remove(holder.getAdapterPosition());
                         notifyItemRemoved(holder.getAdapterPosition());
                         notifyDataSetChanged();
 
@@ -301,8 +301,6 @@ public class UserRentsAdapter extends RecyclerView.Adapter<UserRentsAdapter.View
             Toast.makeText(context, "Reason is required", Toast.LENGTH_SHORT).show();
             return false;
         }
-
-
         else{
             cancelReason.setText(null);
             cancelRentDialog.dismiss();
@@ -341,7 +339,7 @@ public class UserRentsAdapter extends RecyclerView.Adapter<UserRentsAdapter.View
     private void cancelRent(){
         try{
             if(!isValidReason()){
-
+                return;
             }
         }
 
