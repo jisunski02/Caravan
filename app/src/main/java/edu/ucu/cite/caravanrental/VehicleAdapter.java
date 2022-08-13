@@ -116,15 +116,9 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.VehicleV
                     convertedprice = item_price.replaceAll("[^\\d.]", "");
                     price = Integer.parseInt(convertedprice);
 
-                    DecimalFormat formatter = new DecimalFormat("#,###,###");
-                    String formattedPrice = formatter.format(price);
-
                     item_price2 = vehicles.getComplete_package();
-                    convertedprice2 = item_price.replaceAll("[^\\d.]", "");
+                    convertedprice2 = item_price2.replaceAll("[^\\d.]", "");
                     price2 = Integer.parseInt(convertedprice2);
-
-                    DecimalFormat formatter2 = new DecimalFormat("#,###,###");
-                    String formattedPrice2 = formatter2.format(price);
 
                     GlobalVariables.regularVehiclePrice = String.valueOf(price);
                     GlobalVariables.completeVehiclePrice = String.valueOf(price2);

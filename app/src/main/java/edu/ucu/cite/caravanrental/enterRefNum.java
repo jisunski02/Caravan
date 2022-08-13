@@ -29,7 +29,7 @@ public class enterRefNum extends AppCompatActivity {
         BTN_Enter = findViewById(R.id.id_BTN_Enter);
         TV_TotalPrice = findViewById(R.id.id_amount);
 
-        TV_TotalPrice.setText(String.valueOf(GlobalVariables.F_TotalPrice));
+        //TV_TotalPrice.setText(String.valueOf(GlobalVariables.F_TotalPrice));
 
 
 

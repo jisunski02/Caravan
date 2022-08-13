@@ -70,7 +70,8 @@ public class selectmop extends AppCompatActivity {
 //COMPUTATION OF TOTAL PRICE
             GlobalVariables.F_TotalPrice=(Integer.parseInt(GlobalVariables.regularVehiclePrice) *GlobalVariables.F_Rentdays);
 
-        }else{
+        }else
+        {
             Drivers_ID =  getIntent().getStringExtra("keyDriver_id");
             Drivers_Name = getIntent().getStringExtra("keyDriver_name");
             Drivers_Address = getIntent().getStringExtra("keyDriver_address");
