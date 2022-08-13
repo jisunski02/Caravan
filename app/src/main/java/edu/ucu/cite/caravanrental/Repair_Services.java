@@ -2,23 +2,44 @@ package edu.ucu.cite.caravanrental;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.Priority;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
+
+import edu.ucu.cite.caravanrental.databinding.ActivityMapsRepairShopBinding;
 
 public class Repair_Services extends AppCompatActivity implements OnMapReadyCallback {
 
     GoogleMap gMap;
 
     private static final int REQUEST_CODE = 101;
+
+    private ActivityMapsRepairShopBinding binding;
+    private FusedLocationProviderClient fusedLocationProviderClient;
+    private static final int Request_Code = 101;
+    private double lat, lng;
 
     ArrayList<LatLng> arrayList = new ArrayList<LatLng>();
 
@@ -303,6 +324,12 @@ public class Repair_Services extends AppCompatActivity implements OnMapReadyCall
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_repair__services);
      //obtain the supportmapfragment
+
+        binding = ActivityMapsRepairShopBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this.getApplicationContext());
+
         SupportMapFragment supportMapFragment = (SupportMapFragment)
                 getSupportFragmentManager().findFragmentById(R.id.google_map);
         supportMapFragment.getMapAsync(this);
@@ -593,10 +620,79 @@ public class Repair_Services extends AppCompatActivity implements OnMapReadyCall
         for(int i=0; i<arrayList.size();i++){
 
             gMap.addMarker(new MarkerOptions().position(arrayList.get(i)).title("Marker"));
-            gMap.animateCamera(CameraUpdateFactory.zoomTo(20.0f));
+            gMap.animateCamera(CameraUpdateFactory.zoomTo(15));
             gMap.moveCamera(CameraUpdateFactory.newLatLng(arrayList.get(i)));
+
+
         }
 
+        getCurrentLocation();
+    }
 
+    private void getCurrentLocation(){
+
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission
+                (this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, Request_Code);
+            return;
+        }
+        LocationRequest locationRequest = LocationRequest.create();
+        locationRequest.setInterval(6000);
+        locationRequest.setPriority(Priority.PRIORITY_HIGH_ACCURACY);
+        locationRequest.setFastestInterval(5000);
+
+        LocationCallback locationCallback = new LocationCallback() {
+            @Override
+            public void onLocationResult(@NonNull LocationResult locationResult) {
+                super.onLocationResult(locationResult);
+                // Toast.makeText(MapsRepairShop.this, "Location result is: "+locationResult, Toast.LENGTH_SHORT).show();
+
+                if(locationResult == null){
+                    Toast.makeText(Repair_Services.this, "Location result is null: "+locationResult, Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                for(Location location:locationResult.getLocations()){
+                    if(location!= null){
+                        //Toast.makeText(MapsRepairShop.this, "Current location is: "+location.getLongitude(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        };
+
+        fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, null);
+
+        Task<Location> task = fusedLocationProviderClient.getLastLocation();
+        task.addOnSuccessListener(new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+
+                if(location !=null){
+
+                    lat = location.getLatitude();
+                    lng = location.getLongitude();
+
+                    LatLng latLng = new LatLng(lat, lng);
+                    gMap.addMarker(new MarkerOptions().position(latLng).title("Hi you are here!").icon(BitmapDescriptorFactory
+                            .defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
+                    gMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                    gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (Request_Code) {
+            case Request_Code:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    //getCurrentLocation();
+                }
+        }
     }
 }

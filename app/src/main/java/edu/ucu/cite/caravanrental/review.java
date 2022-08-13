@@ -3,13 +3,19 @@ package edu.ucu.cite.caravanrental;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import android.app.Dialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -70,6 +76,11 @@ public class review extends AppCompatActivity implements View.OnClickListener{
 
     String status = SharedPrefManager.getInstance(this).getStatus();
     String Phonenumber=SharedPrefManager.getInstance(review.this).getPhonenumber();
+
+
+    NotificationManagerCompat notificationManagerCompat;
+    Notification notification;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -285,6 +296,29 @@ public class review extends AppCompatActivity implements View.OnClickListener{
                                 Intent i = new Intent(review.this,lastpage.class);
                                 startActivity(i);
                                 finish();
+                                finishAffinity();
+
+                                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+                                    NotificationChannel channel = new NotificationChannel("myCh", "myChannel", NotificationManager.IMPORTANCE_DEFAULT);
+                                    NotificationManager manager = getSystemService(NotificationManager.class);
+
+                                    manager.createNotificationChannel(channel);
+                                }
+
+                                NotificationCompat.Builder builder = new NotificationCompat.Builder(review.this, "myCh")
+                                        .setSmallIcon(R.drawable.logo)
+                                        .setContentTitle("Caravan Rental Booking Information")
+                                        .setContentText("Booking Info")
+                                    .setStyle(new NotificationCompat.BigTextStyle()
+                                        .bigText("Hi "+Customer_FirstNamex+ ", you have successfully booked your car rental amounting to Php "+Total_Pricex+".00. " +
+                                                "However, your booking is under review, please wait for our response within 24 hours.\n\nFor more info" +
+                                                " please check your transactions via in-app. Thank You!!"));
+
+                                notification = builder.build();
+
+                                notificationManagerCompat = NotificationManagerCompat.from(review.this);
+
+                                notificationManagerCompat.notify(1, notification);
                                 //Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
                                 Log.e("anyText",response);
                             }

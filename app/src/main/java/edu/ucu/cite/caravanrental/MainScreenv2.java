@@ -832,9 +832,9 @@ public class MainScreenv2 extends AppCompatActivity implements AdapterView.OnIte
                 break; */
 
             case R.id.repairandservices:
-               /* Intent b = new Intent(Mainscreen.this, Repair_Services.class);
+                /*Intent b = new Intent(MainScreenv2.this, MapsRepairShop.class);
                 startActivity(b);
-                overridePendingTransition(R.anim.fadein,R.anim.fadeout); */
+                overridePendingTransition(R.anim.fadein,R.anim.fadeout);*/
                 Toast.makeText(MainScreenv2.this, "Under construction..to be followed", Toast.LENGTH_SHORT).show();
                 break;
 

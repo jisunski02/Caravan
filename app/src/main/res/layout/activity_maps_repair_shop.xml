@@ -9,6 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         http:gravity="end"
+        http:visibility="gone"
         http:layout_width="match_parent"
         http:layout_height="wrap_content">
 

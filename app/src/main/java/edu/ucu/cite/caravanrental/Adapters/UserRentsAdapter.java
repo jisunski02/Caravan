@@ -9,6 +9,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -196,6 +198,30 @@ public class UserRentsAdapter extends RecyclerView.Adapter<UserRentsAdapter.View
                 cancelReason = cancelRentDialog.findViewById(R.id.cancelReason);
                 close = cancelRentDialog.findViewById(R.id.close);
                 btnCancelRent = cancelRentDialog.findViewById(R.id.btnSubmit);
+
+                cancelReason.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+
+                        if(cancelReason.getText().toString().length() == 0){
+                            btnCancelRent.setVisibility(View.GONE);
+                        }
+                        else{
+                            btnCancelRent.setVisibility(View.VISIBLE);
+                        }
+
+                    }
+                });
 
                 close.setOnClickListener(new View.OnClickListener() {
                     @Override
