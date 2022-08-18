@@ -80,7 +80,7 @@ public class UserRents extends AppCompatActivity implements AdapterView.OnItemSe
         tabLayoutRents = findViewById(R.id.tablayout);
         pendingTab = findViewById(R.id.pendingtab);
         approveTab = findViewById(R.id.approvetab);
-        completedTab = findViewById(R.id.completedtab);
+        //completedTab = findViewById(R.id.completedtab);
 
         //Toolbar Initialization..
         toolbar = findViewById(R.id.toolbar);

@@ -77,7 +77,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Map</string>
     <string name="complete_package">Complete package will include all the expenses during the ride, including the tollfee, gas,\ndriver and car rent and parking fee.</string>
-    <string name="regular_package">Regular package will only include car rent. The\ncustomer will shoulder the other expenses,\nlike parking fee, tollfee etc. It is also a\nfull to full fuel policy.</string>
+    <string name="regular_package">Regular package will only include car rent. The\ncustomer will shoulder the other expenses,\nlike parking fee, tollfee etc. It is also a\nfull to full fuel policy and it has no driver.</string>
     <string name="cashonpickup">Payment will be made upon COP,\ninstead of paying it through g-cash.\nWith this, the renter is assured that\nhe’ll get the rented car are in good condition.</string>
 
     <string name="privacy_policy">At Caravan Rentals, we respect your privacy. We implemented this privacy policy ("Privacy Policy") to explain to you how we use and protect the personal information we may gather from and about our customers by means of our websites, mobile applications, online booking widgets. By using our mobile applications, you consent to the collection, use and disclosure of your information, as described in this Privacy Policy. \n

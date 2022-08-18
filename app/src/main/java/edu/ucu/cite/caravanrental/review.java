@@ -305,22 +305,55 @@ public class review extends AppCompatActivity implements View.OnClickListener{
                                     manager.createNotificationChannel(channel);
                                 }
 
-                                NotificationCompat.Builder builder = new NotificationCompat.Builder(review.this, "myCh")
-                                        .setSmallIcon(R.drawable.logo)
-                                        .setContentTitle("Caravan Rental Booking Information")
-                                        .setContentText("Booking Info")
-                                    .setStyle(new NotificationCompat.BigTextStyle()
-                                        .bigText("Hi "+Customer_FirstNamex+ ", you have successfully booked your car rental amounting to Php "+Total_Pricex+".00. " +
-                                                "However, your booking is under review, please wait for our response within 24 hours.\n\nFor more info" +
-                                                " please check your transactions via in-app. Thank You!!"));
+                                if(GlobalVariables.F_Package.equals("Regular Package")){
+                                    NotificationCompat.Builder builder = new NotificationCompat.Builder(review.this, "myCh")
+                                            .setSmallIcon(R.drawable.logo)
+                                            .setContentTitle("Caravan Rental Booking Information")
+                                            .setContentText("Booking Info")
+                                            .setStyle(new NotificationCompat.BigTextStyle()
+                                                    .bigText("Hi "+Customer_FirstNamex+ ", you have successfully booked your car rental amounting to Php "+Total_Pricex+".00. " +
+                                                            /*"You have selected " + GlobalVariables.F_Package + " which includes Car fee, self-drive and full to full fuel policy.\n\n" +
+                                                            "Destination: "+ GlobalVariables.F_Location + "\n" +
+                                                            "Pick up date: "+ GlobalVariables.DisplayPickupDate + "\n" +
+                                                            "Return date: " + GlobalVariables.DisplayReturnDate + "\n" +
+                                                            "Rent Days: " + GlobalVariables.F_Rentdays+ */
+                                                            "\nHowever, your booking is under review, please wait for our response within 24 hours.\nFor more info" +
+                                                            " please check your transactions via in-app. Thank You!!"));
 
-                                notification = builder.build();
+                                    notification = builder.build();
 
-                                notificationManagerCompat = NotificationManagerCompat.from(review.this);
+                                    notificationManagerCompat = NotificationManagerCompat.from(review.this);
 
-                                notificationManagerCompat.notify(1, notification);
-                                //Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
-                                Log.e("anyText",response);
+                                    notificationManagerCompat.notify(1, notification);
+                                    //Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                                    Log.e("anyText",response);
+                                }
+
+                                else{
+                                    NotificationCompat.Builder builder = new NotificationCompat.Builder(review.this, "myCh")
+                                            .setSmallIcon(R.drawable.logo)
+                                            .setContentTitle("Caravan Rental Booking Information")
+                                            .setContentText("Booking Info")
+                                            .setStyle(new NotificationCompat.BigTextStyle()
+                                                    .bigText("Hi "+Customer_FirstNamex+ ", you have successfully booked your car rental amounting to Php "+Total_Pricex+".00. " +
+                                                            "You have selected " + GlobalVariables.F_Package + " which includes Gas, Car fee, with driver, parking fee and toll fee.\n" +
+                                                            /*"Driver's Name: "+ GlobalVariables.SelectedDriversName + "\n" +
+                                                            "Destination: "+ GlobalVariables.F_Location + "\n" +
+                                                            "Pick up date: "+ GlobalVariables.DisplayPickupDate + "\n" +
+                                                            "Return date: " + GlobalVariables.DisplayReturnDate + "\n" +
+                                                            "Rent Days: " + GlobalVariables.F_Rentdays+ */
+                                                            "However, your booking is under review, please wait for our response within 24 hours.\nFor more info" +
+                                                            " please check your transactions via in-app. Thank You!!"));
+
+                                    notification = builder.build();
+
+                                    notificationManagerCompat = NotificationManagerCompat.from(review.this);
+
+                                    notificationManagerCompat.notify(1, notification);
+                                    //Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                                    Log.e("anyText",response);
+                                }
+
                             }
                            else{
                                 Toast.makeText(getApplicationContext(), jsonObject.getString("message")+"\n"+response.toString(), Toast.LENGTH_LONG).show();

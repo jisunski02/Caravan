@@ -33,7 +33,7 @@ public class HomeNotLoggedIn extends AppCompatActivity {
 
     RecyclerView vehiclerecyclerView;
     private LinearLayoutManager linearLayoutManager;
-    private static final String URL_VEHICLES = "https://caravan-rental-cars.online/includes/displayvehicles.php";
+    private static final String URL_VEHICLES = "https://caravan-rental-cars.online/includes/displayvehicles.php"; //Endpoint
 
     List<Vehicles> vehiclesList;
 
@@ -86,7 +86,7 @@ public class HomeNotLoggedIn extends AppCompatActivity {
 
         loadVehiclesnotAvailable();
 
-        recyclerView = findViewById(R.id.driverList);
+        recyclerView = findViewById(R.id.rentlist);
         recyclerView.setLayoutManager(new LinearLayoutManager(HomeNotLoggedIn.this, LinearLayoutManager.HORIZONTAL, false));
 
         //initializing the productlist

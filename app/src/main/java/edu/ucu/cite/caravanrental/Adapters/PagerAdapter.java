@@ -28,8 +28,8 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 return new ApproveRentsFragment();
             case 2:
                 return new CancelledRentsFragment();
-            case 3:
-                return new CompletedRentsFragment();
+            /*case 3:
+                return new CompletedRentsFragment(); */
             default:
                 return null;
         }

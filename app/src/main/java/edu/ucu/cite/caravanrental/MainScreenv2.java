@@ -119,7 +119,7 @@ public class MainScreenv2 extends AppCompatActivity implements AdapterView.OnIte
         tabLayoutRents = findViewById(R.id.tablayout);
         pendingTab = findViewById(R.id.pendingtab);
         approveTab = findViewById(R.id.approvetab);
-        completedTab = findViewById(R.id.completedtab);
+        //completedTab = findViewById(R.id.completedtab);
 
         // Toolbar
         setSupportActionBar(toolbar);

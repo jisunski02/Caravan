@@ -142,6 +142,7 @@ public class UserRentsAdapter extends RecyclerView.Adapter<UserRentsAdapter.View
         if(currentPosition.getRent_status().equals("1")){
             holder.payNow.setVisibility(View.GONE);
             holder.reason.setVisibility(View.GONE);
+            holder.cancelRent.setVisibility(View.GONE);
             holder.bookAgain.setVisibility(View.GONE);
         }
 
