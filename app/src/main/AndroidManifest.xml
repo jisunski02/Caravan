@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.ucu.cite.caravanrental"
+    package="edu.ucu.cite.caravan"
     android:hardwareAccelerated="true">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Caravan"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".UploadRequirementsActivity"
+            android:exported="false" />
         <activity
             android:name=".ChatUsWebviewActivity"
             android:exported="false" />

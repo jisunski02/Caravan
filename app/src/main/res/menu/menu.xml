@@ -34,8 +34,8 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_share"
-                    android:title="Share" />
+                    android:icon="@drawable/ic_baseline_upload_24"
+                    android:title="Upload ID" />
 
                 <item
                     android:id="@+id/logout"

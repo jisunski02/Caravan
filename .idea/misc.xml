@@ -136,6 +136,7 @@
         <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/layout/view_rent_layout.xml" value="0.176" />
         <entry key="..\:/Users/ServiceUnit/Downloads/CaravanLast/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/activity_home_not_logged_in.xml" value="0.3567708333333333" />
+        <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/activity_login.xml" value="0.3609375" />
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/activity_maps.xml" value="0.3651041666666667" />
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/activity_maps_repair_shop.xml" value="0.3651041666666667" />
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/activity_repair__services.xml" value="0.3651041666666667" />
@@ -143,6 +144,8 @@
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/activity_reviewv2.xml" value="0.3609375" />
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/activity_selectmop.xml" value="0.3567708333333333" />
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/activity_selectpackage.xml" value="0.3567708333333333" />
+        <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/activity_trydriverlist.xml" value="0.3609375" />
+        <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/activity_upload_requirements.xml" value="0.3609375" />
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/car_layout.xml" value="0.18645833333333334" />
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/contentusernotloggedin.xml" value="0.3567708333333333" />
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/dailog_cancelrent.xml" value="0.3609375" />
@@ -151,6 +154,7 @@
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/rents_layoutv2.xml" value="0.3609375" />
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/user_rents.xml" value="0.3567708333333333" />
         <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/layout/userrentscontent.xml" value="0.3567708333333333" />
+        <entry key="..\:/Users/admin/Documents/GitHub/Caravan/app/src/main/res/menu/menu.xml" value="0.3609375" />
       </map>
     </option>
   </component>
