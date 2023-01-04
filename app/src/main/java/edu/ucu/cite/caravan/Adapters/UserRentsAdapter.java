@@ -155,7 +155,10 @@ public class UserRentsAdapter extends RecyclerView.Adapter<UserRentsAdapter.View
         holder.payNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                Intent intent = new Intent(context, UploadPaymentActivity.class);
+                Constants.vehicle_id = currentPosition.getVehicle_id();
+                //Toast.makeText(context, Constants.vehicle_id, Toast.LENGTH_SHORT).show();
                 Constants.booking_id = currentPosition.getId();
                context.startActivity(intent);
 
@@ -251,7 +254,7 @@ public class UserRentsAdapter extends RecyclerView.Adapter<UserRentsAdapter.View
         holder.viewDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Constants.vehicle_id = currentPosition.getVehicle_id();
                 Intent intent = new Intent(context, ViewRentDetails.class);
                 intent.putExtra("pick_up_date", currentPosition.getPick_up_date());
                 intent.putExtra("return_date", currentPosition.getReturn_date());

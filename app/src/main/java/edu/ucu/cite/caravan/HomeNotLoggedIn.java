@@ -117,6 +117,7 @@ public class HomeNotLoggedIn extends AppCompatActivity {
                                 JSONObject vehiclesJSONObject = vehicles.getJSONObject(i);
 
                                 int vehiclesId = vehiclesJSONObject.getInt("vehiclesId");
+                                String vehicle_category = vehiclesJSONObject.getString("vehicle_category");
                                 String vehiclePhoto = vehiclesJSONObject.getString("vehiclesPhoto");
                                 String transmission = vehiclesJSONObject.getString("transmission");
                                 String yearModel = vehiclesJSONObject.getString("yearModel");
@@ -131,7 +132,7 @@ public class HomeNotLoggedIn extends AppCompatActivity {
                                 String vehicleStatus = vehiclesJSONObject.getString("vehicleStatus");
 
 
-                                Vehicles vehicle = new Vehicles(vehiclesId,
+                                Vehicles vehicle = new Vehicles(vehiclesId, vehicle_category,
                                         vehiclePhoto,
                                         transmission,
                                         vehiclesName,

@@ -3,16 +3,40 @@ package edu.ucu.cite.caravan;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import edu.ucu.cite.caravan.Adapters.PaymentAdapter;
+import edu.ucu.cite.caravan.Adapters.RequirementsPhotoAdapter;
+import edu.ucu.cite.caravan.Adapters.VehiclePhotoAdapter;
+import edu.ucu.cite.caravan.DataModels.PaymentModel;
+import edu.ucu.cite.caravan.DataModels.RequirementsPhotoModel;
+import edu.ucu.cite.caravan.DataModels.VehiclePhotoModel;
 
 public class ViewRentDetails extends AppCompatActivity {
 
@@ -24,7 +48,6 @@ public class ViewRentDetails extends AppCompatActivity {
     private TextView year_model, seat_capacity, manufactured_by, plate_number, vehicle_color, registration_expiry, price_perday;
     private TextView driver_name, contact_no, birthdate, license_no, license_exp, total_exp, address, date_joining, tvReason;
     CardView cardViewCancelled;
-    ImageView vehicle_photo;
     ImageView driver_photo;
     private String vehiclePhotoUrl = "https://caravan-rental-cars.000webhostapp.com/vehicles-photo/";
     private String driverPhotoUrl = "https://caravan-rental-cars.000webhostapp.com/drivers-photo/";
@@ -40,6 +63,17 @@ public class ViewRentDetails extends AppCompatActivity {
     String item_price_ = "";
     double price_;
     String convertedprice_ = "";
+
+    RecyclerView vehicle_rent_photo;
+    private LinearLayoutManager linearLayoutManager;
+    private static final String URL_VEHICLES_PHOTO = "https://caravan-rental-cars.online/includes/displayvehiclePhoto.php";
+
+    List<VehiclePhotoModel> vehiclesPhoto;
+
+    RecyclerView recyclerPayment;
+    private LinearLayoutManager linearLayoutManager2;
+    List<PaymentModel> paymentModels;
+    LinearLayout linearPayment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +95,22 @@ public class ViewRentDetails extends AppCompatActivity {
             }
         });
 
+        linearPayment = findViewById(R.id.linearPayment);
+        vehicle_rent_photo = findViewById(R.id.vehicle_rent_photo);
+        vehicle_rent_photo.setHasFixedSize(true);
+        linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        vehicle_rent_photo.setLayoutManager(linearLayoutManager);
+        vehiclesPhoto = new ArrayList<>();
+
+        recyclerPayment = findViewById(R.id.recyclerPayment);
+        recyclerPayment.setHasFixedSize(true);
+        linearLayoutManager2 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerPayment.setLayoutManager(linearLayoutManager2);
+        paymentModels = new ArrayList<>();
+
+        getPayments();
+        loadVehiclePhoto(Integer.parseInt(Constants.vehicle_id));
+
         activityTitle = findViewById(R.id.activity_title);
 
         pick_up_date = findViewById(R.id.pick_up_date);
@@ -71,7 +121,6 @@ public class ViewRentDetails extends AppCompatActivity {
         vehicle_name = findViewById(R.id.vehicle_name);
         payment_method = findViewById(R.id.mode_of_payment);
         rent_status = findViewById(R.id.rent_status);
-        vehicle_photo = findViewById(R.id.vehicle_rent_photo);
         transmission = findViewById(R.id.vehicle_transmission);
         year_model = findViewById(R.id.year_model);
         seat_capacity = findViewById(R.id.seat_capacity);
@@ -124,12 +173,6 @@ public class ViewRentDetails extends AppCompatActivity {
         dateJoining = getIntent().getStringExtra("date_joining");
         reason = getIntent().getStringExtra("reason");
 
-        Glide.with(vehicle_photo).load(vehiclePhotoUrl+vehiclePhoto)
-                .thumbnail(0.5f)
-                .error(R.drawable.ic_car_24)
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(vehicle_photo);
-
         Glide.with(driver_photo).load(driverPhotoUrl+driverPhoto)
                 .thumbnail(0.5f)
                 .error(R.drawable.ic_account_box)
@@ -176,6 +219,7 @@ public class ViewRentDetails extends AppCompatActivity {
         }
 
         if(rentStatus.equals("1")){
+            linearPayment.setVisibility(View.VISIBLE);
             cardViewCancelled.setVisibility(View.GONE);
             rent_status.setText("Approved");
             activityTitle.setText("Approved Rent Overview");
@@ -229,6 +273,133 @@ public class ViewRentDetails extends AppCompatActivity {
             date_joining.setText(dateJoining);
         }
 
+
+    }
+
+    private void loadVehiclePhoto(int vehicle_photo_id) {
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_VEHICLES_PHOTO,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        try {
+                            //converting the string to json array object
+                            JSONArray vehicles = new JSONArray(response);
+
+                            //traversing through all the object
+                            for (int i = 0; i<vehicles.length(); i++) {
+
+                                //getting product object from json array
+                                JSONObject vehiclesJSONObject = vehicles.getJSONObject(i);
+
+                                String id = vehiclesJSONObject.getString("id");
+                                int vehicle_id = vehiclesJSONObject.getInt("vehicle_id");
+                                String vehicle_name = vehiclesJSONObject.getString("vehicle_name");
+                                String created_at = vehiclesJSONObject.getString("created_at");
+
+
+                                VehiclePhotoModel vehicle = new VehiclePhotoModel(id,
+                                        vehicle_id,
+                                        vehicle_name,
+                                        created_at);
+
+                                if(vehicle_photo_id == vehicle_id){
+                                    vehiclesPhoto.add(vehicle);
+                                }
+
+
+                            }
+
+                            //creating adapter object and setting it to recyclerview
+                            VehiclePhotoAdapter adapter = new VehiclePhotoAdapter(ViewRentDetails.this, vehiclesPhoto);
+                            vehicle_rent_photo.setAdapter(adapter);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.e("anyText",response);
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+        Volley.newRequestQueue(this).add(stringRequest);
+    }
+
+    private void getPayments() {
+        //kunin yung id ng naka-login
+        int Temp_Customer_ID = SharedPrefManager.getInstance(this).getId();
+        String Customer_IDx = new Integer(Temp_Customer_ID).toString();
+
+        String url = Constants.MAIN_URL+ "uploadedpayment.php?vehicle_id="+Constants.vehicle_id+"&customer_id=" + Customer_IDx;
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                showJSON(response);
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //Toast.makeText(getActivity(), error.getMessage().toString(), Toast.LENGTH_LONG).show();
+                        error.printStackTrace();
+                    }
+                });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
+    }
+
+    private void showJSON(String response) {
+        ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray result = jsonObject.getJSONArray("tbl_payment");
+
+            for (int i = 0; i < result.length(); i++) {
+                JSONObject jo = result.getJSONObject(i);
+
+                String id = jo.getString("id");
+                String transaction_no = jo.getString("transaction_no");
+                String payment_type = jo.getString("payment_type");
+                String amount = jo.getString("amount");
+                String confirmation_date = jo.getString("confirmation_date");
+                String created_at = jo.getString("created_at");
+
+
+                PaymentModel paymentModel = new PaymentModel(
+                        id, transaction_no,
+                        payment_type, amount,
+                        confirmation_date, created_at
+
+                );
+
+                paymentModels.add(paymentModel);
+
+
+            }
+
+            PaymentAdapter paymentAdapter = new PaymentAdapter(this, paymentModels);
+            recyclerPayment.setAdapter(null);
+            recyclerPayment.setAdapter(paymentAdapter);
+
+            /*if(paymentAdapter.getItemCount()==0){
+                noReqPhoto.setVisibility(View.VISIBLE);
+            }
+            else {
+                noReqPhoto.setVisibility(View.GONE);
+            }*/
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 }

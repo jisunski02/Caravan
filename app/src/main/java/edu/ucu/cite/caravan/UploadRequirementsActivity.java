@@ -68,7 +68,6 @@ public class UploadRequirementsActivity extends AppCompatActivity {
 
         btnUpload = findViewById(R.id.btnUpload);
         paymentImage = findViewById(R.id.paymentImage);
-
         btnPayNow = findViewById(R.id.btnUploadReq);
         close = findViewById(R.id.close);
 
@@ -140,13 +139,13 @@ public class UploadRequirementsActivity extends AppCompatActivity {
 
     private boolean uploadPaymentToDb2()
     {
-        if(encodeImageString == null ){
+        if(encodeImageString == null){
             progressDialog.dismiss();
-            Toast.makeText(UploadRequirementsActivity.this, "Please attached image first", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UploadRequirementsActivity.this, "Please attached image and fill Reference number", Toast.LENGTH_SHORT).show();
             return false;
         }
 
-        else if(!(encodeImageString.isEmpty())){
+        else if(!encodeImageString.isEmpty()){
             StringRequest request=new StringRequest(Request.Method.POST, url, response -> {
                 try {
                     JSONObject jsonObject = new JSONObject(response);

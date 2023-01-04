@@ -104,29 +104,56 @@
 
 </LinearLayout>
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabStatus"
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicatorColor="#F44336"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:orientation="horizontal">
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/availableTab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Available" />
+            <Button
+                android:id="@+id/all"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_cancel_cardbgcolor"
+                android:text="All"
+                android:fontFamily="@font/poppins_bold"
+                android:textAllCaps="false"
+                android:textColor="@color/white"/>
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/onRentTab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ON RENT" />
+            <Button
+                android:id="@+id/SUV"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_suv_cardbgcolor"
+                android:text="SUV"
+                android:fontFamily="@font/poppins_bold"
+                android:textAllCaps="false"
+                android:textColor="@color/white"/>
 
-        </com.google.android.material.tabs.TabLayout>
+            <Button
+                android:id="@+id/VAN"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_van_cardbgcolor"
+                android:text="VAN"
+                android:fontFamily="@font/poppins_bold"
+                android:textAllCaps="false"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/VehicleRecyclerView"

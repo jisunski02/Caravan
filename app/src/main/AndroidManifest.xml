@@ -22,6 +22,12 @@
         android:theme="@style/Theme.Caravan"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".PolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadedRequirementActivity"
+            android:exported="false" />
+        <activity
             android:name=".UploadRequirementsActivity"
             android:exported="false" />
         <activity

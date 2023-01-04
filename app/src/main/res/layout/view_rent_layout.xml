@@ -20,10 +20,11 @@
                 android:layout_height="match_parent">
 
 
-                <ImageView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/vehicle_rent_photo"
                     android:layout_width="0dp"
-                    android:layout_height="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
@@ -561,6 +562,28 @@
                 </androidx.cardview.widget.CardView>
 
 
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/linearPayment"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Payment History"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/profileUploadCardView"

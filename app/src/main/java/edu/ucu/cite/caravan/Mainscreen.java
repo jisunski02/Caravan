@@ -839,10 +839,39 @@ public class Mainscreen extends AppCompatActivity implements AdapterView.OnItemS
                     alert.show();
                 }
                 else {
-                    Intent c = new Intent(Mainscreen.this, UploadRequirementsActivity.class);
-                    startActivity(c);
+                    Dialog dialogViewUpload = new Dialog(this);
+                    dialogViewUpload.requestWindowFeature(Window.FEATURE_NO_TITLE);//...........
+                    dialogViewUpload.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    dialogViewUpload.setContentView(R.layout.dialog_viewupload);
+
+                    ImageView close = dialogViewUpload.findViewById(R.id.close);
+                    Button upload = dialogViewUpload.findViewById(R.id.upload);
+                    Button view = dialogViewUpload.findViewById(R.id.view);
+
+                    close.setOnClickListener(view13 -> dialogViewUpload.dismiss());
+
+                    upload.setOnClickListener(view12 -> {
+                        dialogViewUpload.dismiss();
+                        Intent c = new Intent(Mainscreen.this, UploadRequirementsActivity.class);
+                        startActivity(c);
+                    });
+
+                    view.setOnClickListener(view1 -> {
+                        dialogViewUpload.dismiss();
+                        Intent c = new Intent(Mainscreen.this, UploadedRequirementActivity.class);
+                        startActivity(c);
+                    });
+
+                    dialogViewUpload.setCancelable(false);
+                    dialogViewUpload.show();
+
                 }
 
+                break;
+
+            case R.id.nav_policy:
+                Intent f = new Intent(Mainscreen.this, PolicyActivity.class);
+                startActivity(f);
                 break;
             case R.id.logout:
                 SharedPrefManager.getInstance(this).logout();

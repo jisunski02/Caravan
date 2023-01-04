@@ -64,7 +64,7 @@ public class UploadPaymentActivity extends AppCompatActivity {
     ArrayList<String> arrayList = new ArrayList<>();
 
     String id;
-
+    EditText transactionNum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +82,7 @@ public class UploadPaymentActivity extends AppCompatActivity {
         paymentType = findViewById(R.id.payment_type);
         btnPayNow = findViewById(R.id.btnUploadReq);
         close = findViewById(R.id.close);
+        transactionNum = findViewById(R.id.transactionNum);
 
         close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,17 +189,22 @@ public class UploadPaymentActivity extends AppCompatActivity {
     private boolean uploadPaymentToDb2()
     {
         String amountString = amount.getText().toString().trim();
-        if(encodeImageString == null || amount.getText().toString().trim().isEmpty() || paymentType.getText().toString().trim().isEmpty() ){
-            Toast.makeText(UploadPaymentActivity.this, "Make sure you attached image, payment type and amount", Toast.LENGTH_SHORT).show();
+        if(encodeImageString == null || transactionNum.getText().toString().isEmpty() || amount.getText().toString().trim().isEmpty() || paymentType.getText().toString().trim().isEmpty() ){
+            Toast.makeText(UploadPaymentActivity.this, "Make sure you attached image, payment type, amount and transaction number", Toast.LENGTH_SHORT).show();
         return false;
         }
 
-        else if(!(encodeImageString.isEmpty() && amount.getText().toString().isEmpty() && paymentType.getText().toString().isEmpty())){
+        else if(transactionNum.getText().toString().length() <13){
+            transactionNum.setError("Ref/Receipt number too short");
+        }
+
+        else if(!(encodeImageString.isEmpty() && transactionNum.getText().toString().isEmpty()&& amount.getText().toString().isEmpty() && paymentType.getText().toString().isEmpty())){
             StringRequest request=new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response)
                 {
                     try {
+                        transactionNum.setError(null);
                         JSONObject jsonObject = new JSONObject(response);
                         String result = jsonObject.getString("success");
                         if (result.equals("1")) {
@@ -233,8 +239,10 @@ public class UploadPaymentActivity extends AppCompatActivity {
                     Map<String,String> map=new HashMap<String, String>();
                     //map.put("t1",name);
                     // map.put("t2",dsg);
+                    map.put("transaction_no", transactionNum.getText().toString());
                     map.put("proof_of_payment",encodeImageString);
                     map.put("booking_id", Constants.booking_id);
+                    map.put("vehicle_id", Constants.vehicle_id);
                     map.put("customer_id", id);
                     map.put("payment_type", paymentType.getText().toString());
                     map.put("amount", amount.getText().toString());
@@ -297,6 +305,7 @@ public class UploadPaymentActivity extends AppCompatActivity {
                 // map.put("t2",dsg);
                 map.put("proof_of_payment",encodeImageString);
                 map.put("booking_id", Constants.booking_id);
+                map.put("vehicle_id", Constants.vehicle_id);
                 map.put("customer_id", id);
                 map.put("payment_type", paymentType.getText().toString());
                 map.put("amount", amount.getText().toString());

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PolicyActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="true"
+        app:title="Policy of CARAVAN"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textSize="14sp"
+            android:text="ACCEPTED PAYMENT METHOD"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:text="-Payments by Debit Cards bank checks or by prepaid cards, bank transfers or payment links are not accepted.
+                        \n-Deposit is the GUARANTEE for the fulfillment of the client's obligations, at the beginning of the rental, the deposit or guarantee will be charged/debited by CARAVAN rent a car, on the client's G-cash or Cash.
+                        \n-In the event of a problematic rental in cases of accidents in which the insurance company is responsible for repairing the vehicle, mechanical errors that are speculated to have been caused by the lessee, theft, fire or similar cases, CARAVAN rent a car reserves the right to keep the deposit until the case has been completely resolved and the client is absolved of any fault.
+                        \n-Failure by the client to comply with the provisions of this contract entails loss of the deposit up to the amount owed.
+                        \n-Payment must be made with a means of payment in the name of the main driver or a customer. The holder of the G-cash account must be present at the time of making the payment for the rental of the vehicle. Payment must always be made in compliance with the customer with the provisions of current legislation on the form of payment for the vehicle rental service without a driver."
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:text="Caravan’s Cancellations Policy"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_bold"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:text="Cancellations:"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_bold"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:text="Cancellations are accepted at any time under the pending category."
+
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:text="Guaranteed Reservations:"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_bold"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:text="Cancellations are accepted up to one calendar day before reservation date.
+Reservations canceled more than 24 hours before the pick-up time, 10% cancellation fee will apply as a charge or damage fee."
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:text="G-cash/Cash on Pick-Up Reservation Cancellation Fee:"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_bold"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="14sp"
+            android:text="Please note that you must present the account you prepay with at the time of rental pick-up.
+If a G-cash reservation is canceled more than 24 hours before the pick-up time, PHP 1,500 cancellation fee will be assessed."
+            android:fontFamily="@font/poppins"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>

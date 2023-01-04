@@ -12,8 +12,8 @@ android {
         applicationId "edu.ucu.cite.caravanrental"
         minSdkVersion 23 //Marshmallow
         targetSdkVersion 31 //Android 12/Android Q
-        versionCode 2
-        versionName "1.2.0"
+        versionCode 8
+        versionName "1.7.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

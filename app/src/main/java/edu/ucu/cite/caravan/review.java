@@ -308,7 +308,7 @@ public class review extends AppCompatActivity implements View.OnClickListener{
                                 startActivity(i);
                                 finish();
                                 finishAffinity();
-                                updateCarStatus();
+                                //updateCarStatus();
                                 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
                                     NotificationChannel channel = new NotificationChannel("myCh", "myChannel", NotificationManager.IMPORTANCE_DEFAULT);
                                     NotificationManager manager = getSystemService(NotificationManager.class);

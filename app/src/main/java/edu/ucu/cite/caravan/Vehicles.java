@@ -3,6 +3,7 @@ package edu.ucu.cite.caravan;
 public class Vehicles {
 
     private int vehicles_id;
+    private String vehicle_category;
     private String vehicle_photo;
     private String transmission;
     private String vehicle_name;
@@ -17,8 +18,9 @@ public class Vehicles {
     private String vehicle_status;
 
 
-    public Vehicles(int vehicles_id, String vehicle_photo, String transmission, String vehicle_name, String year_model, String seat_capacity, String manufactured_by, String vehicle_platenum, String vehicle_color, String vehicle_regexpiry, String regular_package, String complete_package, String vehicle_status) {
+    public Vehicles(int vehicles_id, String vehicle_category, String vehicle_photo, String transmission, String vehicle_name, String year_model, String seat_capacity, String manufactured_by, String vehicle_platenum, String vehicle_color, String vehicle_regexpiry, String regular_package, String complete_package, String vehicle_status) {
         this.vehicles_id = vehicles_id;
+        this.vehicle_category = vehicle_category;
         this.vehicle_photo = vehicle_photo;
         this.transmission = transmission;
         this.vehicle_name = vehicle_name;
@@ -35,6 +37,10 @@ public class Vehicles {
 
     public int getVehicles_id() {
         return vehicles_id;
+    }
+
+    public String getVehicle_category() {
+        return vehicle_category;
     }
 
     public String getVehicle_photo() {

@@ -1,0 +1,31 @@
+package edu.ucu.cite.caravan.DataModels;
+
+public class RequirementsPhotoModel {
+    String id;
+    String customer_id;
+    String photo;
+    String created_at;
+
+    public RequirementsPhotoModel(String id, String customer_id, String photo, String created_at) {
+        this.id = id;
+        this.customer_id = customer_id;
+        this.photo = photo;
+        this.created_at = created_at;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getCustomer_id() {
+        return customer_id;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+}

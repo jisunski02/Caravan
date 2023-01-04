@@ -15,6 +15,9 @@ public class Constants {
     public static final String URL_BOOKAGAIN = MAIN_URL+ "updatebookagainrent.php";
     public static final String URL_ALL_RENTS = MAIN_URL+ "allrents.php";
     public static final String URL_UPDATE_VEHICLE_STATUS = MAIN_URL+"updateCarStatus.php";
+    public static final String URL_REQUIREMENT_PHOTO = MAIN_URL+ "uploadedrequirements.php";
+    public static final String URL_DELETE_REQUIREMENT = MAIN_URL+ "deleteRequirement.php";
     public static String verification_Code = "";
     public static String booking_id = "";
+    public static String vehicle_id = "";
 }
