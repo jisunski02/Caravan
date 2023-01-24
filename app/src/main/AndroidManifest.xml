@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.ucu.cite.caravan"
+    package="edu.ucu.cite.caravanrental"
     android:hardwareAccelerated="true">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -22,19 +22,19 @@
         android:theme="@style/Theme.Caravan"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".PolicyActivity"
+            android:name="edu.ucu.cite.caravanrental.PolicyActivity"
             android:exported="false" />
         <activity
-            android:name=".UploadedRequirementActivity"
+            android:name="edu.ucu.cite.caravanrental.UploadedRequirementActivity"
             android:exported="false" />
         <activity
-            android:name=".UploadRequirementsActivity"
+            android:name="edu.ucu.cite.caravanrental.UploadRequirementsActivity"
             android:exported="false" />
         <activity
-            android:name=".ChatUsWebviewActivity"
+            android:name="edu.ucu.cite.caravanrental.ChatUsWebviewActivity"
             android:exported="false" />
         <activity
-            android:name=".UploadPaymentActivity"
+            android:name="edu.ucu.cite.caravanrental.UploadPaymentActivity"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -52,23 +52,23 @@
             android:value="AIzaSyCLLmjstpOHRJZLDkkKZw6K00WtHFDwxKY" />
 
         <activity
-            android:name=".MapsRepairShop"
+            android:name="edu.ucu.cite.caravanrental.MapsRepairShop"
             android:exported="false"
             android:label="@string/title_activity_maps_repair_shop" />
         <activity
-            android:name=".LoginActivity"
+            android:name="edu.ucu.cite.caravanrental.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".SMSOtpActivity"
+            android:name="edu.ucu.cite.caravanrental.SMSOtpActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewRentDetails"
+            android:name="edu.ucu.cite.caravanrental.ViewRentDetails"
             android:exported="false" />
         <activity
-            android:name=".MainscreenActivity"
+            android:name="edu.ucu.cite.caravanrental.MainscreenActivity"
             android:exported="false" />
         <activity
-            android:name=".MapsActivity"
+            android:name="edu.ucu.cite.caravanrental.MapsActivity"
             android:label="@string/title_activity_maps" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -78,29 +78,29 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-        <activity android:name=".Pndng_Rents" />
-        <activity android:name=".Apprvd_Rents" />
-        <activity android:name=".Cmpltd_Rents" />
-        <activity android:name=".displayDetails" />
-        <activity android:name=".mylist" />
-        <activity android:name=".enterRefNum" />
-        <activity android:name=".lastpage" />
-        <activity android:name=".selectmop" />
-        <activity android:name=".review" />
-        <activity android:name=".selectvehicle" />
-        <activity android:name=".trydriverlist" />
-        <activity android:name=".selectpackage" />
-        <activity android:name=".Repair_Services" />
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".Car_Bookings" />
-        <activity android:name=".Mainscreen" />
-        <activity android:name=".profile" />
-        <activity android:name=".PrivacyPolicy" />
-        <activity android:name=".TermsOfService" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="edu.ucu.cite.caravanrental.Pndng_Rents" />
+        <activity android:name="edu.ucu.cite.caravanrental.Apprvd_Rents" />
+        <activity android:name="edu.ucu.cite.caravanrental.Cmpltd_Rents" />
+        <activity android:name="edu.ucu.cite.caravanrental.displayDetails" />
+        <activity android:name="edu.ucu.cite.caravanrental.mylist" />
+        <activity android:name="edu.ucu.cite.caravanrental.enterRefNum" />
+        <activity android:name="edu.ucu.cite.caravanrental.lastpage" />
+        <activity android:name="edu.ucu.cite.caravanrental.selectmop" />
+        <activity android:name="edu.ucu.cite.caravanrental.review" />
+        <activity android:name="edu.ucu.cite.caravanrental.selectvehicle" />
+        <activity android:name="edu.ucu.cite.caravanrental.trydriverlist" />
+        <activity android:name="edu.ucu.cite.caravanrental.selectpackage" />
+        <activity android:name="edu.ucu.cite.caravanrental.Repair_Services" />
+        <activity android:name="edu.ucu.cite.caravanrental.SecondActivity" />
+        <activity android:name="edu.ucu.cite.caravanrental.Car_Bookings" />
+        <activity android:name="edu.ucu.cite.caravanrental.Mainscreen" />
+        <activity android:name="edu.ucu.cite.caravanrental.profile" />
+        <activity android:name="edu.ucu.cite.caravanrental.PrivacyPolicy" />
+        <activity android:name="edu.ucu.cite.caravanrental.TermsOfService" />
+        <activity android:name="edu.ucu.cite.caravanrental.RegisterActivity" />
+        <activity android:name="edu.ucu.cite.caravanrental.MainActivity" />
         <activity
-            android:name=".HomeNotLoggedIn"
+            android:name="edu.ucu.cite.caravanrental.HomeNotLoggedIn"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -108,8 +108,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SMSOtpActivityOnProfile" />
-        <activity android:name=".UserRents" />
+        <activity android:name="edu.ucu.cite.caravanrental.SMSOtpActivityOnProfile" />
+        <activity android:name="edu.ucu.cite.caravanrental.UserRents" />
 
         <meta-data
             android:name="preloaded_fonts"

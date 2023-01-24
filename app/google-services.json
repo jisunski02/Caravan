@@ -1,70 +1,41 @@
 {
   "project_info": {
-    "project_number": "562463480940",
-    "project_id": "caravan-304ab",
-    "storage_bucket": "caravan-304ab.appspot.com"
+    "project_number": "1030748740410",
+    "project_id": "caravan-rental-7c9a4",
+    "storage_bucket": "caravan-rental-7c9a4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:562463480940:android:acd132ff46d9617b434c49",
-        "android_client_info": {
-          "package_name": "edu.ucu.cite.caravan"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "562463480940-8925usad5tum2paneoothtjuvg56n7f8.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "edu.ucu.cite.caravan",
-            "certificate_hash": "4690c9f27879c83c2f0b2890e03ec793c8d66bad"
-          }
-        },
-        {
-          "client_id": "562463480940-np6oh8tiu078qmsff78vm9p0hk2dj3ho.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCXWz7ge2oKt_Zmk5HfFUgqcc5V70sUa_8"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "562463480940-np6oh8tiu078qmsff78vm9p0hk2dj3ho.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:562463480940:android:2dc9568d4e972ceb434c49",
+        "mobilesdk_app_id": "1:1030748740410:android:1477bf2f94054fb5e18e03",
         "android_client_info": {
           "package_name": "edu.ucu.cite.caravanrental"
         }
       },
       "oauth_client": [
         {
-          "client_id": "562463480940-np6oh8tiu078qmsff78vm9p0hk2dj3ho.apps.googleusercontent.com",
+          "client_id": "1030748740410-iaoojj0enpnjhlkmumdbksk82olm3me0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.ucu.cite.caravanrental",
+            "certificate_hash": "4690c9f27879c83c2f0b2890e03ec793c8d66bad"
+          }
+        },
+        {
+          "client_id": "1030748740410-a7t74lafjhi3gnnumtedi71u11nk82hm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCXWz7ge2oKt_Zmk5HfFUgqcc5V70sUa_8"
+          "current_key": "AIzaSyBhc7U7Mej8kApqqduB55HeYl1sikgIEi4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "562463480940-np6oh8tiu078qmsff78vm9p0hk2dj3ho.apps.googleusercontent.com",
+              "client_id": "1030748740410-a7t74lafjhi3gnnumtedi71u11nk82hm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

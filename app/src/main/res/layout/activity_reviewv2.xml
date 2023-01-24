@@ -11,6 +11,17 @@
         android:id="@+id/appbar_productviewing"
         layout="@layout/application_toolbar" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
     <TextView
         android:text="Rent Overview"
         android:layout_marginTop="10dp"
@@ -389,4 +400,7 @@
         android:paddingEnd="10dp"
        android:layout_gravity="center"
         />
+
+    </LinearLayout>
+    </ScrollView>
     </LinearLayout>
