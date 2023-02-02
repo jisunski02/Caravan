@@ -27,6 +27,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.List;
@@ -80,6 +81,8 @@ public class RequirementsPhotoAdapter extends RecyclerView.Adapter<RequirementsP
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.photo);
 
+        holder.iddocumentName.setText(currentPosition.getPhoto_name());
+
         holder.deletePhoto.setOnClickListener(view -> {
             id = currentPosition.getId();
             rentsDataModels.remove(holder.getAdapterPosition());
@@ -103,9 +106,11 @@ public class RequirementsPhotoAdapter extends RecyclerView.Adapter<RequirementsP
         ImageButton deletePhoto;
         ImageView photo;
         TextView transactionNum;
+        TextView iddocumentName;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            iddocumentName = itemView.findViewById(R.id.iddocumentName);
             photo = itemView.findViewById(R.id.photo);
             deletePhoto = itemView.findViewById(R.id.deletePhoto);
 

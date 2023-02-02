@@ -62,7 +62,7 @@ public class Mainscreen extends AppCompatActivity implements AdapterView.OnItemS
 
     //Dialog Rent Widgets and Strings
     Button BTN_next;
-    String Location="default_value",SpickupDate,Spickuptime,SreturnDate,Sreturntime;
+    String Location="default_value",SpickupDate,Spickuptime,SreturnDate,Sreturntime, SpickupDate2, SreturnDate2;
     Long RentDays;
 
     private ImageButton pickupDate;
@@ -229,7 +229,7 @@ public class Mainscreen extends AppCompatActivity implements AdapterView.OnItemS
                                 //Store in string
                                 pickupmonth=pickupmonth+1;
                                 SpickupDate = pickupday+"-"+pickupmonth+"-"+pickupyear;
-
+                                SpickupDate2 = pickupyear+"-"+pickupmonth+"-"+pickupday;
 
                                 //set date on text view
                                 tv_pickupdate.setText(SpickupDate);
@@ -583,6 +583,7 @@ public class Mainscreen extends AppCompatActivity implements AdapterView.OnItemS
                                     //Store in string
                                     Pkmonth = Pkmonth + 1;
                                     SreturnDate = Pday + "-" + Pkmonth + "-" + Pyear;
+                                    SreturnDate2 = Pyear + "-" + Pkmonth + "-" + Pday;
                                     //set date on text view
                                     tv_returndate.setText(SreturnDate);
 
@@ -734,8 +735,8 @@ public class Mainscreen extends AppCompatActivity implements AdapterView.OnItemS
                             intent.putExtra("displayreturntime", displayreturnTime);
 
                             GlobalVariables.F_Location=Location;
-                            GlobalVariables.DisplayPickupDate = SpickupDate;
-                            GlobalVariables.DisplayReturnDate = SreturnDate;
+                            GlobalVariables.DisplayPickupDate = SpickupDate2;
+                            GlobalVariables.DisplayReturnDate = SreturnDate2;
                             GlobalVariables.F_Rentdays=RentDays.intValue();
 
                             startActivity(intent);

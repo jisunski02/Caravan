@@ -122,8 +122,7 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.VehicleV
 
                     GlobalVariables.regularVehiclePrice = String.valueOf(price);
                     GlobalVariables.completeVehiclePrice = String.valueOf(price2);
-
-                   // Toast.makeText(contextX, String.valueOf(price), Toast.LENGTH_SHORT).show();
+                    Constants.rescodes = vehicles.getRes_code();
 
                 }
             }
@@ -191,6 +190,7 @@ public class VehicleAdapter extends RecyclerView.Adapter<VehicleAdapter.VehicleV
 
                             GlobalVariables.regularVehiclePrice = String.valueOf(price);
                             GlobalVariables.completeVehiclePrice = String.valueOf(price2);
+                            Constants.rescodes = vehicles.getRes_code();
                             contextX.startActivity(intent);
                         }
                     });

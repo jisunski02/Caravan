@@ -20,4 +20,5 @@ public class Constants {
     public static String booking_id = "";
     public static String vehicle_id = "";
     public static String totalPayment = "";
+    public static String rescodes = "";
 }

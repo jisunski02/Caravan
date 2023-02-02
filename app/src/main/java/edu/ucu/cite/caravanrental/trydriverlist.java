@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -23,6 +24,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import edu.ucu.cite.caravanrental.DataModels.DateRangeModel;
+import edu.ucu.cite.caravanrental.DataModels.RescodeDataModel;
 
 public class trydriverlist extends AppCompatActivity {
 
@@ -39,6 +43,9 @@ public class trydriverlist extends AppCompatActivity {
     private Toolbar toolbar;
     private TextView activityTitle;
 
+    private static final String URL_RESCODE = Constants.MAIN_URL+"displaydrivers2.php";
+
+    List<RescodeDataModel> rescodeDataModels;
 
     @Override 
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,42 +79,17 @@ public class trydriverlist extends AppCompatActivity {
         //recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        rescodeDataModels = new ArrayList<>();
+        loadRescode();
         //initializing the productlist
         driversList = new ArrayList<>();
+
 
         //this method will fetch and parse json
         //to display it in recyclerview
         loadDrivers( );
 
-       /* displayLocation=findViewById(R.id.idLocation);
-        displayPickdate=findViewById(R.id.idPickDate);
-        displayPickhour=findViewById(R.id.idPickhour);
-        displayReturndate=findViewById(R.id.idReturnDate);
-        displayReturnhour=findViewById(R.id.idReturnHour);
-        displayRentDays=findViewById(R.id.idRentdays);
-        displaypackage=findViewById(R.id.idPackage);*/
-
-        String Location = getIntent().getStringExtra("nextlocation");
-        String Pickupdate = getIntent().getStringExtra("nextdate");
-        String Pickuphour = getIntent().getStringExtra("nextpickuphour");
-        String Returndate = getIntent().getStringExtra("nextreturndate");
-        String Returnhour = getIntent().getStringExtra("nextreturntime");
-        Long Rentdays = getIntent().getLongExtra("nextRentdays",0);
-        String Package = getIntent().getStringExtra("nextPackage");
-
-        //GlobalVariables.F_Location = Location;
-
-        //setText
-     /*   displayLocation.setText(Location);
-        displayPickdate.setText(Pickupdate);
-        displayPickhour.setText(Pickuphour);
-        displayReturndate.setText(Returndate);
-        displayReturnhour.setText(Returnhour);
-        displayRentDays.setText(String.valueOf(Rentdays));
-        displaypackage.setText(Package);*/
     }
-
-
 
     private void loadDrivers() {
         progressDialog.show();
@@ -127,23 +109,29 @@ public class trydriverlist extends AppCompatActivity {
                                 JSONObject driversObject = drivers.getJSONObject(i);
 
                                 String driversID = driversObject.getString("Number");
-                                String driversName = driversObject.getString("Name");
+                                String driversFirstName = driversObject.getString("First");
+                                String driversLastName = driversObject.getString("Last");
                                 String driversAddress = driversObject.getString("Address");
                                 String driversMobile = driversObject.getString("Mobile");
                                 String driversPhoto = driversObject.getString("drivers_photo");
                                 String driversExp = driversObject.getString("drivers_exp");
                                 String driversLicense = driversObject.getString("drivers_license");
 
-                                Drivers driver = new Drivers(driversID,driversName,driversAddress,driversMobile, driversPhoto, driversExp, driversLicense);
-                                driversList.add(driver);
+                                Drivers driver = new Drivers(driversID,driversFirstName,driversLastName, driversAddress,driversMobile, driversPhoto, driversExp, driversLicense);
 
-                                //adding the product to product list
-                                /*driversList.add(new Drivers(
-                                        product.getString("driver_id"),
-                                        product.getString("driver_name"),
-                                        product.getString("driver_address"),
-                                        product.getString("driver_mobile")
-                                ));*/
+                                for (int x=0; x <rescodeDataModels.size(); x++) {
+                                    RescodeDataModel model = rescodeDataModels.get(x);
+                                    if (model.getDriver_id().equals(driversID) && Constants.rescodes.contains(model.getRescode())) {
+                                        boolean isExist = isExist(driver.getDrivers_id());
+                                        if(!isExist) {
+                                            driversList.add(driver);
+                                        }
+
+                                    }
+
+                                }
+
+
                             }
 
                             //creating adapter object and setting it to recyclerview
@@ -159,7 +147,7 @@ public class trydriverlist extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                       
+
                     }
                 });
 
@@ -167,5 +155,68 @@ public class trydriverlist extends AppCompatActivity {
     }
 
 
+    public boolean isExist(String strID) {
+
+        for (int i = 0; i < driversList.size(); i++) {
+            Drivers model = driversList.get(i);
+            if (model.getDrivers_id().equals(strID)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void loadRescode() {
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_RESCODE,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            //converting the string to json array object
+                            JSONArray vehicles = new JSONArray(response);
+
+                            //traversing through all the object
+                            for (int i = 0; i<vehicles.length(); i++) {
+
+                                //getting product object from json array
+                                JSONObject vehiclesJSONObject = vehicles.getJSONObject(i);
+
+                                String driverID = vehiclesJSONObject.getString("driverID");
+                                String driverRes = vehiclesJSONObject.getString("driverRes");
+
+                                if(driverRes.equals("1")){
+                                    driverRes = "one";
+                                }
+                                if(Constants.rescodes.equals("BB1B2") && driverRes.equals("2")){
+                                    driverRes = "one";
+                                }
+
+                                RescodeDataModel res = new RescodeDataModel(driverID, driverRes);
+
+                                    rescodeDataModels.add(res);
+
+
+
+
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.e("anyText",response);
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+        Volley.newRequestQueue(this).add(stringRequest);
+    }
 
 }

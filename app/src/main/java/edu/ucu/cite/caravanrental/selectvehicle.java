@@ -165,6 +165,7 @@ public class selectvehicle extends AppCompatActivity {
                                 String regExpiry = vehiclesJSONObject.getString("registrationExpiry");
                                 String regular_package = vehiclesJSONObject.getString("regular_package");
                                 String complete_package = vehiclesJSONObject.getString("complete_package");
+                                String res_code = vehiclesJSONObject.getString("res_code");
                                 String vehicleStatus = vehiclesJSONObject.getString("vehicleStatus");
 
 
@@ -180,6 +181,7 @@ public class selectvehicle extends AppCompatActivity {
                                         regExpiry,
                                         regular_package,
                                         complete_package,
+                                        res_code,
                                         vehicleStatus);
 
                                 if(vehicleStatus.equals("0")){
@@ -241,6 +243,7 @@ public class selectvehicle extends AppCompatActivity {
                                 String regExpiry = vehiclesJSONObject.getString("registrationExpiry");
                                 String regular_package = vehiclesJSONObject.getString("regular_package");
                                 String complete_package = vehiclesJSONObject.getString("complete_package");
+                                String res_code = vehiclesJSONObject.getString("res_code");
                                 String vehicleStatus = vehiclesJSONObject.getString("vehicleStatus");
 
 
@@ -256,6 +259,7 @@ public class selectvehicle extends AppCompatActivity {
                                         regExpiry,
                                         regular_package,
                                         complete_package,
+                                        res_code,
                                         vehicleStatus);
 
                                 if(vehicleStatus.equals("0") && vehicle_category.equals("VAN")){
@@ -317,6 +321,7 @@ public class selectvehicle extends AppCompatActivity {
                                 String regExpiry = vehiclesJSONObject.getString("registrationExpiry");
                                 String regular_package = vehiclesJSONObject.getString("regular_package");
                                 String complete_package = vehiclesJSONObject.getString("complete_package");
+                                String res_code = vehiclesJSONObject.getString("res_code");
                                 String vehicleStatus = vehiclesJSONObject.getString("vehicleStatus");
 
 
@@ -332,6 +337,7 @@ public class selectvehicle extends AppCompatActivity {
                                         regExpiry,
                                         regular_package,
                                         complete_package,
+                                        res_code,
                                         vehicleStatus);
 
                                 if(vehicleStatus.equals("0") && vehicle_category.equals("SUV")){

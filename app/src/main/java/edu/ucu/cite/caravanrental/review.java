@@ -24,6 +24,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,13 +42,19 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+import edu.ucu.cite.caravanrental.DataModels.DateRangeModel;
+import edu.ucu.cite.caravanrental.DataModels.RequirementsPhotoModel;
 
 public class review extends AppCompatActivity implements View.OnClickListener{
 
@@ -85,6 +93,10 @@ public class review extends AppCompatActivity implements View.OnClickListener{
     Notification notification;
 
     TextView noOfDays;
+
+    List<DateRangeModel> checkDateList;
+    ScrollView scrollView;
+    LinearLayout linearLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,12 +117,20 @@ public class review extends AppCompatActivity implements View.OnClickListener{
             }
         });
 
+        checkDateList = new ArrayList<>();
+        getDateList();
 
         activityTitle = findViewById(R.id.activity_title);
         activityTitle.setText("Caravan");
+        linearLayout = findViewById(R.id.linearLayout);
 
         btn_confirmReservation = findViewById(R.id.BTNconfirmReservation);
         noOfDays = findViewById(R.id.noOfDays);
+        scrollView = findViewById(R.id.scrollView);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading review page...");
+        progressDialog.show();
 
         int Temp_Rent_Days = GlobalVariables.F_Rentdays;
         String Rent_Daysx = new Integer(Temp_Rent_Days).toString();
@@ -132,21 +152,6 @@ public class review extends AppCompatActivity implements View.OnClickListener{
         TV_Vehicles_platenumber = findViewById(R.id.id_vehiclesPlatenum);
         TV_Vehicles_capacity = findViewById(R.id.id_vehiclesCapacity);
         TV_Vehicles_transmission = findViewById(R.id.id_vehiclesTransmission);
-
-
-       /* Vehicle_id = getIntent().getIntExtra("key_Vehicles_ID", 0);
-        Vehicle_name = getIntent().getStringExtra("key_Vehicles_Name");
-        Vehicle_platenumber = getIntent().getStringExtra("key_Vehicles_Platenum");
-        Vehicle_capacity = getIntent().getIntExtra("key_Vehicles_Capacity", 0);
-        Vehicle_transmission = getIntent().getStringExtra("key_Vehicles_Transmission");
-        Vehicle_price = getIntent().getIntExtra("key_Vehicles_Price", 0);
-
-        GlobalVariables.SelectedVehiclesID=Vehicle_id;
-        GlobalVariables.SelectedVehiclesName=Vehicle_name;
-        GlobalVariables.SelectedVehiclesPlateNumber=Vehicle_platenumber;
-        GlobalVariables.SelectedVehiclesCapacity=Vehicle_capacity;
-        GlobalVariables.SelectedVehiclesTransmission=Vehicle_transmission;
-        GlobalVariables.SelectedVehiclesPrice=Vehicle_price; */
 
         item_price = String.valueOf(GlobalVariables.F_TotalPrice);
         convertedprice = item_price.replaceAll("[^\\d.]", "");
@@ -259,7 +264,26 @@ public class review extends AppCompatActivity implements View.OnClickListener{
 
 
             } else {
-                insertreservation();
+
+                if(checkDateList.size()>0){
+                    progressDialog.dismiss();
+
+
+                    for (int x=0; x <checkDateList.size(); x++) {
+                        DateRangeModel model = checkDateList.get(x);
+                        if (model.getVehicle_id().contains(String.valueOf(GlobalVariables.SelectedVehiclesID))) {
+                            Toast.makeText(this, "Car is already on rent for selected date.", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                    }
+
+                }
+
+                else{
+                    insertreservation();
+                }
+
             }
 
     }
@@ -417,50 +441,68 @@ public class review extends AppCompatActivity implements View.OnClickListener{
 
     }
 
-    private void updateCarStatus(){
+    private void getDateList() {
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_UPDATE_VEHICLE_STATUS,
-                new Response.Listener<String>() {
+        String Pickup_Date_Timex = GlobalVariables.DisplayPickupDate+" "+GlobalVariables.pckptime;
+        String Return_Date_Timex = GlobalVariables.DisplayReturnDate+" "+GlobalVariables.rtrntime;
+
+        String url = Constants.MAIN_URL+ "checkdaterange.php?pick_up_date="+Pickup_Date_Timex+"&return_date="+Return_Date_Timex;
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                showJSON(response);
+                progressDialog.dismiss();
+                linearLayout.setVisibility(View.VISIBLE);
+            }
+        },
+                new Response.ErrorListener() {
                     @Override
-                    public void onResponse(String response) {
-                        try{
-                            JSONObject jsonObject = new JSONObject(response);
-                            String result = jsonObject.getString("success");
-
-                            if(result.equals("1")){
-                                Log.d("log", response);
-                                finish();
-                            }
-
-                            else{
-                                Log.e("log", response);
-                            }
-                        }
-                        catch(Exception jsonException){
-                            jsonException.printStackTrace();
-                        }
+                    public void onErrorResponse(VolleyError error) {
+                        //Toast.makeText(getActivity(), error.getMessage().toString(), Toast.LENGTH_LONG).show();
+                        error.printStackTrace();
                     }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+                });
 
-                Toast.makeText(review.this, error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }){
-
-            @Nullable
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-
-                Map<String,String> params = new HashMap<>();
-                params.put("vehicle_status", "1");
-                params.put("id", String.valueOf(GlobalVariables.SelectedVehiclesID));
-                return params;
-            }
-        };
-
-        RequestQueue requestQueue = Volley.newRequestQueue(review.this);
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+
+    }
+
+    private void showJSON(String response) {
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray result = jsonObject.getJSONArray("date_range");
+
+            for (int i = 0; i < result.length(); i++) {
+                try {
+                    JSONObject jo = result.getJSONObject(i);
+
+                    String pickupdate = jo.getString("pick_up_date");
+                    String returndate = jo.getString("return_date");
+                    String vehicle_id = jo.getString("vehicle_id");
+
+                    DateRangeModel dateRangeModel = new DateRangeModel(
+                            pickupdate, returndate, vehicle_id
+
+                    );
+
+                    checkDateList.add(dateRangeModel);
+
+                }
+               catch (Exception e){
+                   Toast.makeText(this, "No Data", Toast.LENGTH_SHORT).show();
+                   progressDialog.dismiss();
+                   linearLayout.setVisibility(View.VISIBLE);
+               }
+
+            }
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

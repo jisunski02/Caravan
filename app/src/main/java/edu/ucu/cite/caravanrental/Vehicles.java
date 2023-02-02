@@ -15,10 +15,10 @@ public class Vehicles {
     private String vehicle_regexpiry;
     private String regular_package;
     private String complete_package;
+    private String res_code;
     private String vehicle_status;
 
-
-    public Vehicles(int vehicles_id, String vehicle_category, String vehicle_photo, String transmission, String vehicle_name, String year_model, String seat_capacity, String manufactured_by, String vehicle_platenum, String vehicle_color, String vehicle_regexpiry, String regular_package, String complete_package, String vehicle_status) {
+    public Vehicles(int vehicles_id, String vehicle_category, String vehicle_photo, String transmission, String vehicle_name, String year_model, String seat_capacity, String manufactured_by, String vehicle_platenum, String vehicle_color, String vehicle_regexpiry, String regular_package, String complete_package, String res_code, String vehicle_status) {
         this.vehicles_id = vehicles_id;
         this.vehicle_category = vehicle_category;
         this.vehicle_photo = vehicle_photo;
@@ -32,6 +32,7 @@ public class Vehicles {
         this.vehicle_regexpiry = vehicle_regexpiry;
         this.regular_package = regular_package;
         this.complete_package = complete_package;
+        this.res_code = res_code;
         this.vehicle_status = vehicle_status;
     }
 
@@ -85,6 +86,10 @@ public class Vehicles {
 
     public String getComplete_package() {
         return complete_package;
+    }
+
+    public String getRes_code() {
+        return res_code;
     }
 
     public String getVehicle_status() {

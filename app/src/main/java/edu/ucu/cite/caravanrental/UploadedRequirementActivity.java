@@ -108,19 +108,19 @@ public class UploadedRequirementActivity extends AppCompatActivity {
 
                 String id = jo.getString("id");
                 String customer_id = jo.getString("customer_id");
+                String photo_name = jo.getString("photo_name");
                 String photo = jo.getString("photo");
                 String created_at = jo.getString("created_at");
 
 
                 RequirementsPhotoModel requirementsPhoto = new RequirementsPhotoModel(
-                        id,
+                        id, photo_name,
                         customer_id, photo,
                         created_at
 
                 );
 
                 requirementsPhotoModels.add(requirementsPhoto);
-
 
             }
 

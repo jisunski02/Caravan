@@ -49,7 +49,8 @@ public class DriversAdapter extends RecyclerView.Adapter<DriversAdapter.MyViewHo
                 .into(holder.drivers_photo);
 
         holder.drivers_exp.setText(drivers.getDrivers_exp());
-        holder.drivers_name.setText(drivers.getDrivers_name());
+        holder.firstName.setText(drivers.getDrivers_firstname());
+        holder.lastName.setText(drivers.getDrivers_lastname());
         holder.drivers_address.setText(drivers.getDrivers_address());
         holder.drivers_mobile.setText(drivers.getDrivers_mobile());
         holder.drivers_license.setText("License #: "+drivers.getDrivers_license());
@@ -60,7 +61,7 @@ public class DriversAdapter extends RecyclerView.Adapter<DriversAdapter.MyViewHo
             public void onClick(View v) {
 
                 Intent intent = new Intent(context,selectmop.class);
-                intent.putExtra("keyDriver_name", drivers.getDrivers_name());
+                intent.putExtra("keyDriver_name", drivers.getDrivers_firstname());
                 intent.putExtra("keyDriver_address", drivers.getDrivers_address());
                 intent.putExtra("keyDriver_mobile", drivers.getDrivers_mobile());
                 intent.putExtra("keyDriver_id", drivers.getDrivers_id());
@@ -81,7 +82,7 @@ public class DriversAdapter extends RecyclerView.Adapter<DriversAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView drivers_name,drivers_address,drivers_mobile, drivers_exp, drivers_license;
+        TextView firstName, lastName, drivers_address,drivers_mobile, drivers_exp, drivers_license;
         ImageView drivers_photo;
         Button select_driverbtn;
 
@@ -89,7 +90,8 @@ public class DriversAdapter extends RecyclerView.Adapter<DriversAdapter.MyViewHo
             super(itemView);
 
             select_driverbtn=itemView.findViewById(R.id.select_driverbtn);
-            drivers_name=itemView.findViewById(R.id.drivers_name);
+            firstName=itemView.findViewById(R.id.firstName);
+            lastName=itemView.findViewById(R.id.lastName);
             drivers_address=itemView.findViewById(R.id.drivers_address);
             drivers_mobile=itemView.findViewById(R.id.drivers_mobile);
             drivers_photo = itemView.findViewById(R.id.driver_photo);
