@@ -271,7 +271,7 @@ public class review extends AppCompatActivity implements View.OnClickListener{
 
                     for (int x=0; x <checkDateList.size(); x++) {
                         DateRangeModel model = checkDateList.get(x);
-                        if (model.getVehicle_id().contains(String.valueOf(GlobalVariables.SelectedVehiclesID))) {
+                        if (model.getVehicle_id().equals(String.valueOf(GlobalVariables.SelectedVehiclesID))) {
                             Toast.makeText(this, "Car is already on rent for selected date.", Toast.LENGTH_SHORT).show();
                             return;
                         }
@@ -280,9 +280,9 @@ public class review extends AppCompatActivity implements View.OnClickListener{
 
                 }
 
-                else{
+
                     insertreservation();
-                }
+
 
             }
 
@@ -446,7 +446,7 @@ public class review extends AppCompatActivity implements View.OnClickListener{
         String Pickup_Date_Timex = GlobalVariables.DisplayPickupDate+" "+GlobalVariables.pckptime;
         String Return_Date_Timex = GlobalVariables.DisplayReturnDate+" "+GlobalVariables.rtrntime;
 
-        String url = Constants.MAIN_URL+ "checkdaterange.php?pick_up_date="+Pickup_Date_Timex+"&return_date="+Return_Date_Timex;
+        String url = Constants.MAIN_URL+ "checkdaterange.php?pick_up_date="+Pickup_Date_Timex+"&return_date="+Return_Date_Timex+"&vehicle_id="+String.valueOf(GlobalVariables.SelectedVehiclesID);
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET,url, new Response.Listener<String>() {
             @Override
